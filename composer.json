@@ -1,0 +1,56 @@
+{
+    "name": "tune-trafikskole/portfolio",
+    "version": "1.0.0",
+    "description": "Element is a super ''easy-to-work-with'' php framework, that are built on top of Slim3. It's very similar to Laravel",
+    "keywords": ["Tiny-Rebels", "element", "framework", "slim3", "MVC", "PHP-7", "Vue.JS", "Webpack", "SCSS", "Bootstrap3", "Twig", "JS", "NPM", "Composer"],
+    "type": "project",
+    "license": "MIT",
+    "authors": [{
+        "name": "Stefan Korfitz",
+        "homepage": "https://www.korfitz.com",
+        "role": "Developer"
+    }],
+    "support": {
+        "email": "stefan@korfitz.com"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        },
+        "sort-packages": true
+    },
+    "require": {
+        "cartalyst/sentinel": "^4.0",
+        "firebase/php-jwt": "^6.10",
+        "hassankhan/config": "^3.1",
+        "illuminate/database": "~7",
+        "illuminate/events": "~7",
+        "illuminate/pagination": "^7.30",
+        "illuminate/translation": "~7",
+        "php-di/slim-bridge": "1.0.2",
+        "respect/validation": "1.1",
+        "slim/csrf": "0.8.3",
+        "slim/slim": "~3",
+        "slim/twig-view": "^2.5",
+        "swiftmailer/swiftmailer": "^6.3",
+        "symfony/http-foundation": "^5.4",
+        "symfony/var-dumper": "^5.4",
+        "symfony/yaml": "^5.4",
+        "twig/intl-extra": "^3.9",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "api\\": "api",
+            "app\\": "app"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\": "tests/"
+        },
+        "files": [
+            "app/helpers/path.php"
+        ]
+    }
+}

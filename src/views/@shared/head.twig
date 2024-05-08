@@ -1,0 +1,31 @@
+<head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <!-- App manifest -->
+    <link rel="manifest" href="{{ base_url() }}/public/manifest.json">
+
+    <!-- Browserconfig -->
+    <meta name="msapplication-config" content="{{ base_url() }}/public/browserconfig.xml" />
+
+    <!-- Favicon(s) -->
+    {{ include('/@shared/fav-icons.twig') }}
+
+    <!-- Page Title -->
+    <title>
+        {% block title %}default title{% endblock %}
+    </title>
+
+    <!-- Nucleo Icons -->
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="{{ base_url() }}/public/css/back/app.min.css" rel="stylesheet" />
+
+</head>
