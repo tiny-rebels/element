@@ -4,15 +4,14 @@
  * OUTER Group that DOESN'T apply CSRF to routes
  *
  * @var $app
- * @var $container
  *
  */
-$app->group('/api', function () use($app, $container) {
+$app->group('/api', function () use($app) {
 
     /**
      * SWAGGER UI
      */
-    $app->group('/v1', function () use($app, $container) {
+    $app->group('/v1', function () use($app) {
 
         /**
          * rendering view : API -> SWAGGER-UI

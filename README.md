@@ -71,10 +71,10 @@ Element was inspired and put together from these courses over at [codecourse.com
 7.  [Get friendly with Webpack](https://codecourse.com/courses/get-friendly-with-webpack)
 8.  [Building a Vue project with Webpack](https://codecourse.com/courses/building-a-vue-project-with-webpack)
 9.  [Learn Vuex](https://codecourse.com/courses/learn-vuex)
-10. [Build an image upload microservice](https://codecourse.com/watch/build-an-image-upload-microservice)
-11. [The Symfony Console Component](https://codecourse.com/watch/symfony-console-component)
-12. [Build a command-line uptime monitor](https://codecourse.com/courses/build-a-command-line-uptime-monitor)
-13. [Database migrations with Slim](https://codecourse.com/watch/database-migrations-with-slim)
+10. [The Symfony Console Component](https://codecourse.com/watch/symfony-console-component)
+11. [Build a command-line uptime monitor](https://codecourse.com/courses/build-a-command-line-uptime-monitor)
+12. [Database migrations with Slim](https://codecourse.com/watch/database-migrations-with-slim)
+13. [Build an image upload microservice](https://codecourse.com/watch/build-an-image-upload-microservice)
 14. [Unit testing with PHPUnit](https://codecourse.com/watch/unit-testing-with-php-unit)
 
 

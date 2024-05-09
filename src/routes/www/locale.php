@@ -4,10 +4,9 @@
  * OUTER Group that applies CSRF to routes
  *
  * @var $app
- * @var $container
  *
  */
-$app->group('', function () use($app, $container) {
+$app->group('', function () use($app) {
 
     /**
      * adding to view : LOCALIZATION

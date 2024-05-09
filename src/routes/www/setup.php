@@ -4,10 +4,9 @@
  * OUTER Group that applies CSRF to routes
  *
  * @var $app
- * @var $container
  *
  */
-$app->group('/setup', function () use($app, $container) {
+$app->group('/setup', function () use($app) {
 
     $app->group('/app', function () use($app) {
 

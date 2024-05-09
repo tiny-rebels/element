@@ -4,7 +4,6 @@
  * OUTER Group that DOESN'T apply CSRF to routes
  *
  * @var $app
- * @var $container
  *
  */
 $app->group('/api', function () use($app) {
