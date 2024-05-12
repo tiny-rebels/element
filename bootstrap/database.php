@@ -29,5 +29,6 @@ $capsule->addConnection([
     'prefix'    => $config->get('db.mysql.prefix'),
 
 ]);
+$capsule->setEventDispatcher(new EventDispatcher);
 $capsule->setAsGlobal();
 $capsule->bootEloquent();

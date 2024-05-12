@@ -2,6 +2,8 @@
 
 namespace app\console;
 
+use GuzzleHttp\Client as HttpClient;
+
 use Noodlehaus\Config;
 
 use Psr\Container\{
@@ -14,9 +16,13 @@ use Symfony\Component\Console\{
     Output\OutputInterface
 };
 
+use Symfony\Component\EventDispatcher\EventDispatcher;
+
 abstract class BaseCommand extends Command {
 
     protected $container;
+    protected $client;
+    protected $dispatcher;
     protected $config;
     protected $input;
     protected $output;
@@ -28,7 +34,9 @@ abstract class BaseCommand extends Command {
         parent::__construct();
 
         $this->container    = $container;
+        $this->client       = $container->get(HttpClient::class);
         $this->config       = $container->get(Config::class);
+        $this->dispatcher   = $container->get(EventDispatcher::class);
 
         $this->setName($this->command);
         $this->setDescription($this->description);

@@ -34,13 +34,25 @@ class Image extends Model {
         'updated_at'
     ];
 
+    /**
+     * @return void
+     */
     public static function boot() {
 
         parent::boot();
 
         static::creating(function ($image) {
 
-            $image->uuid = Uuid::uuid4()->toString();
+            try {
+
+                $image->uuid = Uuid::uuid4()->toString();
+
+            } catch (\Exception $error) {
+
+                dump("no uuid was generated?!");
+                die;
+
+            }
         });
     }
 }

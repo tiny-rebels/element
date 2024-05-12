@@ -1,6 +1,7 @@
 <?php
 
 use $useClassName;
+
 use Illuminate\Database\Schema\Blueprint;
 
 class $className extends $baseClassName {
@@ -35,6 +36,14 @@ class $className extends $baseClassName {
 
 			// TODO : Write your SQL here
 		});
+
+		/**
+         * Don't forget to replace TABLENAME with your actual name!
+         */
+        $this->schema->table('TABLENAME', function (Blueprint $table) {
+
+            // TODO : Write your SQL here
+        });
 	}
 
 	/**

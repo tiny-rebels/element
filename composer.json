@@ -20,17 +20,25 @@
         "sort-packages": true
     },
     "require": {
+        "ext-json": "*",
         "cartalyst/sentinel": "^5.0",
+        "dragonmantank/cron-expression": "^3.3",
         "firebase/php-jwt": "^6.10",
+        "guzzlehttp/guzzle": "~7",
         "hassankhan/config": "^3.1",
         "illuminate/database": "~8",
         "illuminate/events": "~8",
         "illuminate/pagination": "~8",
         "illuminate/support": "~8",
         "illuminate/translation": "~8",
+        "intervention/image": "^2.7",
+        "intervention/imagecache": "^2.6",
+        "nesbot/carbon": "^2.72",
         "php-di/slim-bridge": "1.0.2",
         "phpunit/phpunit": "9.6.19",
+        "ramsey/uuid": "^4.2",
         "respect/validation": "1.1",
+        "robmorgan/phinx": "^0.14.0",
         "slim/csrf": "0.8.3",
         "slim/slim": "~3",
         "slim/twig-view": "^2.5",
@@ -41,6 +49,7 @@
         "symfony/var-dumper": "~5",
         "symfony/yaml": "~5",
         "twig/intl-extra": "^3.9",
+        "twilio/sdk": "^8.0",
         "vlucas/phpdotenv": "^5.6"
     },
     "autoload": {

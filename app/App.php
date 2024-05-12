@@ -31,7 +31,7 @@ class App extends DIBridge {
 
             'settings.displayErrorDetails'                  => $_ENV["APP_MODE"] == "development", // true IF APP_MODE is set to "development" otherwise its false
             'settings.addContentLengthHeader'               => false,
-            'settings.determineRouteBeforeAppMiddleware'    => true,
+            'settings.determineRouteBeforeAppMiddleware'    => true
 
         ]);
 

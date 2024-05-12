@@ -1,10 +1,13 @@
 # setting variables for CACHE
-cache:
+storage:
 
   # setting cache for VIEW
-  view: "storage/cache/views" # <-- NOTE! It's either false for OFF or the path ("storage/cache/views") to where the cached views are stored...
+  view:
+    cache:
+      path: "storage/cache/views" # <-- NOTE! It's either false for OFF or the path ("storage/cache/views") to where the cached views are stored...
 
   # setting cache for UPLOADS
   uploads:
     image:
-      path: "storage/cache/image"
+      cache:
+        path: "storage/cache/images"

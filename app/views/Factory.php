@@ -31,7 +31,7 @@ class Factory {
 
         return new Twig(__DIR__ . '/../../src/views', [
 
-            'cache' => $config->get('cache.view'),
+            'cache' => $config->get('storage.view.cache.path'),
             'debug' => $config->get('app.debug')
         ]);
     }

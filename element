@@ -1,5 +1,5 @@
 #!/usr/bin/php
-<?php
+<?php global $app;
 
 use app\console\{
     Console,

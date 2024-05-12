@@ -2,14 +2,14 @@
 
 namespace app\console\commands;
 
+use app\console\BaseCommand;
+
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use app\console\Commands;
-
-class DummyClass extends Commands {
+class DummyClass extends BaseCommand {
 
     /*
     |---------------------------------------------------------------
@@ -44,7 +44,7 @@ class DummyClass extends Commands {
      *
      * @return int
      */
-    public function handle(InputInterface $input, OutputInterface $output) {
+    public function handle(InputInterface $input, OutputInterface $output): int {
 
         // add your code here!
 

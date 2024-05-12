@@ -14,6 +14,18 @@ use app\handlers\auth\{
     Parser
 };
 
+use app\handlers\notifier\{
+    Slack as SlackNotifier,
+    Twilio as TwilioNotifier,
+};
+
+use app\listeners\endpoint\{
+    Slack_DownNotification,
+    Slack_UpNotification,
+    SMS_DownNotification,
+    SMS_UpNotification
+};
+
 use app\providers\{
     auth\EloquentProvider,
     jwt\FirebaseProvider
@@ -27,17 +39,20 @@ use app\validations\{
 use app\views\{
     Factory,
     extensions\GetEnvExtension,
-    extensions\GetYamlExtension,
     extensions\TranslationExtension
 };
 
 use Cartalyst\Sentinel\Native\Facades\Sentinel;
+
+use GuzzleHttp\Client as HttpClient;
 
 use Illuminate\{
     Translation\Translator,
     Translation\FileLoader,
     Filesystem\Filesystem
 };
+
+use Intervention\Image\ImageManager;
 
 use Noodlehaus\Config;
 
@@ -52,7 +67,11 @@ use Slim\{
     Views\TwigExtension
 };
 
+use Symfony\Component\EventDispatcher\EventDispatcher;
+
 use Twig\Extra\Intl\IntlExtension;
+
+use Twilio\Rest\Client as Twilio;
 
 /**
  * attaching : TO CONTAINER ->
@@ -113,6 +132,49 @@ return [
         $guard->setPersistentTokenMode(true);
 
         return $guard;
+    },
+
+    /* Endpoint Monitor -> Symfony EventDispatcher */
+    EventDispatcher::class => function (ContainerInterface $container) {
+
+        $dispatcher = new Symfony\Component\EventDispatcher\EventDispatcher();
+
+        $SlackNotificationsIsEnabled = $container->get(Config::class)->get('el.endpoint.notify.slack');
+        $SmsNotificationsIsEnabled = $container->get(Config::class)->get('el.endpoint.notify.sms');
+
+        if ($SlackNotificationsIsEnabled) {
+
+            $dispatcher->addListener('endpoint.down', [new Slack_DownNotification($container->get(SlackNotifier::class)), 'handle']);
+
+            $dispatcher->addListener('endpoint.up', [new Slack_UpNotification($container->get(SlackNotifier::class)), 'handle']);
+
+        }
+
+        if ($SmsNotificationsIsEnabled) {
+
+            $dispatcher->addListener('endpoint.down', [new SMS_DownNotification($container->get(TwilioNotifier::class)), 'handle']);
+
+            $dispatcher->addListener('endpoint.up', [new SMS_UpNotification($container->get(TwilioNotifier::class)), 'handle']);
+
+        }
+
+        return $dispatcher;
+    },
+
+    /* Endpoint Monitor -> TWILIO */
+    Twilio::class => function (ContainerInterface $container) {
+
+        $config = $container->get(Config::class)->get('service.ss');
+
+        return new Twilio(
+            $config['sid'], $config['token']
+        );
+    },
+
+    /* Guzzle HttpClient */
+    HttpClient::class => function () {
+
+        return new HttpClient();
     },
 
     /* MAILER */
@@ -180,6 +242,17 @@ return [
         ]);
 
         return $twig;
+    },
+
+    /* UPLOAD -> IMAGES */
+    ImageManager::class => function (ContainerInterface $container) {
+
+        $config = $container->get(Config::class);
+
+        $manager = new ImageManager();
+        $manager->configure($config->get('storage.uploads.image'));
+
+        return $manager;
     },
 
     /* VALIDATOR */

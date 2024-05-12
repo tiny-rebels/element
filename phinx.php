@@ -2,6 +2,7 @@
 
 use app\App;
 
+use Dotenv\Dotenv;
 use Noodlehaus\Config;
 
 /* APP */
@@ -12,6 +13,10 @@ $container = $app->getContainer();
 
 /* APP -> CONFIGS */
 $config = $container->get(Config::class);
+
+/* APP -> MODE */
+$appmode = Dotenv::createImmutable(__DIR__ . '/', 'mode.env');
+$appmode->load();
 
 /**
  * PHINX config file
@@ -35,7 +40,7 @@ return [
 
         'default_migration_table' => 'migrations',
 
-        'default_database' => getenv('APP_MODE'),
+        'default_environment' => $_ENV["APP_MODE"],
 
         'development' => [
 
