@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\{
     Model
 };
 
+/**
+ * @method static paginate(int $per_page)
+ */
 class User extends Model implements JwtSubject {
 
     /**
