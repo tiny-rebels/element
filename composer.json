@@ -19,10 +19,21 @@
         },
         "sort-packages": true
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "K:\\Git\\Element\\element-social",
+            "options": {
+                "symlink": false
+            }
+        }
+    ],
     "require": {
         "ext-json": "*",
         "cartalyst/sentinel": "^5.0",
         "dragonmantank/cron-expression": "^3.3",
+        "element/social": "dev-development",
+        "element/unique": "^3.0",
         "firebase/php-jwt": "^6.10",
         "guzzlehttp/guzzle": "~7",
         "hassankhan/config": "^3.1",

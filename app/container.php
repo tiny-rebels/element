@@ -250,7 +250,7 @@ return [
         $config = $container->get(Config::class);
 
         $manager = new ImageManager();
-        $manager->configure($config->get('storage.uploads.image'));
+        $manager->configure($config->get('storage.upload.image'));
 
         return $manager;
     },

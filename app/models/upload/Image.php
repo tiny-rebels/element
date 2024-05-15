@@ -2,9 +2,9 @@
 
 namespace app\models\upload;
 
-use Illuminate\Database\Eloquent\Model;
+use Element\Unique\Generate;
 
-use Ramsey\Uuid\Uuid;
+use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model {
 
@@ -45,7 +45,7 @@ class Image extends Model {
 
             try {
 
-                $image->uuid = Uuid::uuid4()->toString();
+                $image->uuid = Generate::uuid4();
 
             } catch (\Exception $error) {
 

@@ -8,6 +8,6 @@ if (!function_exists('base_path')) {
 
 if (!function_exists('upload_image_path')) {
     function upload_image_path($path = '') {
-        return base_path('storage/uploads/images/' . $path);
+        return base_path('../storage/upload/images/' . $path);
     }
 }

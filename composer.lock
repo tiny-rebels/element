@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5370ca215782f32c64bf49252e9f77ff",
+    "content-hash": "5ece16552cf094c0be3f214aa59df1de",
     "packages": [
         {
             "name": "brick/math",
@@ -959,6 +959,115 @@
                 }
             ],
             "time": "2023-06-01T07:04:22+00:00"
+        },
+        {
+            "name": "element/social",
+            "version": "dev-development",
+            "dist": {
+                "type": "path",
+                "url": "K:/Git/Element/element-social",
+                "reference": "8a0554aa2285ab9eae848f00815174a239076515"
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.8"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Element\\Social\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Element\\Social\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "Stefan Korfitz",
+                    "email": "stefan@korfitz.com"
+                }
+            ],
+            "description": "Social auth package for Element",
+            "keywords": [
+                "Bootstrap3",
+                "Composer",
+                "JS",
+                "MVC",
+                "NPM",
+                "PHP-7",
+                "SCSS",
+                "Tiny-Rebels",
+                "Twig",
+                "Vue3",
+                "Webpack",
+                "element",
+                "framework",
+                "slim3"
+            ],
+            "support": {
+                "email": "stefan@korfitz.com"
+            },
+            "transport-options": {
+                "symlink": false,
+                "relative": false
+            }
+        },
+        {
+            "name": "element/unique",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tiny-rebels/element-unique.git",
+                "reference": "42f955d9f9880e50a99fd7e5f0e4f8e1b9c6a82b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tiny-rebels/element-unique/zipball/42f955d9f9880e50a99fd7e5f0e4f8e1b9c6a82b",
+                "reference": "42f955d9f9880e50a99fd7e5f0e4f8e1b9c6a82b",
+                "shasum": ""
+            },
+            "suggest": {
+                "php8": "This package utilizes features that are found in 7.4 - But if you use php8 or higher, then you should have no problems"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Element\\Unique\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stefan Korfitz",
+                    "homepage": "https://www.korfitz.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Element package for generating unique ID's such as software licenses, auth tokens, OTP's",
+            "keywords": [
+                "Auth-Recovery",
+                "Element core",
+                "UID",
+                "generator",
+                "software license",
+                "token"
+            ],
+            "support": {
+                "email": "stefan@korfitz.com",
+                "issues": "https://github.com/tiny-rebels/element-unique/issues",
+                "source": "https://github.com/tiny-rebels/element-unique/tree/3.0.1"
+            },
+            "time": "2024-05-15T14:24:24+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -7796,16 +7905,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.10.1",
+            "version": "v3.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "3af5ab2e52279e5e23dc192b1a26db3b8cffa4e7"
+                "reference": "7aaed0b8311a557cc8c4047a71fd03153a00e755"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3af5ab2e52279e5e23dc192b1a26db3b8cffa4e7",
-                "reference": "3af5ab2e52279e5e23dc192b1a26db3b8cffa4e7",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/7aaed0b8311a557cc8c4047a71fd03153a00e755",
+                "reference": "7aaed0b8311a557cc8c4047a71fd03153a00e755",
                 "shasum": ""
             },
             "require": {
@@ -7859,7 +7968,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.10.1"
+                "source": "https://github.com/twigphp/Twig/tree/v3.10.2"
             },
             "funding": [
                 {
@@ -7871,7 +7980,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-12T06:16:18+00:00"
+            "time": "2024-05-14T06:04:16+00:00"
         },
         {
             "name": "twilio/sdk",
@@ -8146,7 +8255,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "element/social": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
