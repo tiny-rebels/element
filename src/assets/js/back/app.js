@@ -6,6 +6,22 @@ import 'scss/back/soft-ui-dashboard.scss'
 /**
  * import icons into webpack bundler
  */
+/* brands */
+import 'icons/brands/ic_brand_apple.svg'
+import 'icons/brands/ic_brand_facebook.svg'
+import 'icons/brands/ic_brand_github.svg'
+import 'icons/brands/ic_brand_google.svg'
+import 'icons/brands/ic_brand_instagram.svg'
+import 'icons/brands/ic_brand_linkedin.svg'
+import 'icons/brands/ic_brand_microsoft.svg'
+import 'icons/brands/ic_brand_spotify.svg'
+import 'icons/brands/ic_brand_swagger.svg'
+import 'icons/brands/ic_brand_tiktok.svg'
+import 'icons/brands/ic_brand_trustpilot.svg'
+import 'icons/brands/ic_brand_x.svg'
+import 'icons/brands/ic_brand_whatsapp.svg'
+import 'icons/brands/ic_brand_white_facebook.svg'
+import 'icons/brands/ic_brand_white_linkedin.svg'
 /* favorites */
 import 'icons/app/fav/ic_fav_16x16.png'
 import 'icons/app/fav/ic_fav_32x32.png'
@@ -16,6 +32,8 @@ import 'icons/app/fav/ic_fav_96x96.png'
 import 'icons/app/fav/ic_fav_144x144.png'
 import 'icons/app/fav/ic_fav_168x168.png'
 import 'icons/app/fav/ic_fav_192x192.png'
+import 'icons/app/fav/ic_fav_256x256.png'
+import 'icons/app/fav/ic_fav_512x512.png'
 /* flags */
 import 'icons/flag/ic_flag_BE.svg'
 import 'icons/flag/ic_flag_CZ.svg'
@@ -39,6 +57,8 @@ import 'icons/flag/ic_flag_TR.svg'
 import 'icons/ic_down_arrow.svg'
 import 'icons/ic_down_arrow_dark.svg'
 import 'icons/ic_down_arrow_white.svg'
+import 'icons/ic_merge.svg'
+import 'icons/ic_user_avatar.svg'
 
 /**
  * import images into webpack bundler

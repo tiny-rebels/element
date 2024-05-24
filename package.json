@@ -67,6 +67,7 @@
 		"webpack-notifier": "^1.15.0"
 	},
 	"resolutions": {
-		"@babel/preset-env": "^7.21.5"
+		"@babel/preset-env": "^7.21.5",
+		"node-notifier": "6.0.0"
 	}
 }

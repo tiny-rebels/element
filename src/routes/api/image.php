@@ -1,10 +1,7 @@
 <?php global $app;
 
-use app\handlers\auth\JwtAuth;
-
-use app\middleware\security\api\{
-    JwtAuthenticateMiddleware
-};
+use app\handlers\auth\jwt\JwtAuth;
+use app\middleware\security\api\{JwtAuthenticateMiddleware};
 
 /**
  * Pulling container items

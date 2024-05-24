@@ -1,6 +1,6 @@
 <?php
 
-namespace app\handlers\auth\contracts;
+namespace app\handlers\auth\jwt\contracts;
 
 interface JwtSubject {
 

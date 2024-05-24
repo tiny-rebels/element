@@ -5,6 +5,11 @@ use app\middleware\security\{
     CsrfViewMiddleware
 };
 
+use Psr\Container\{
+    ContainerExceptionInterface,
+    NotFoundExceptionInterface
+};
+
 use Slim\{
     Csrf\Guard,
     Router,
@@ -14,9 +19,17 @@ use Slim\{
 /**
  * Pulling container items
  */
-$guard  = $app->getContainer()->get(Guard::class);
-$router = $app->getContainer()->get(Router::class);
-$view   = $app->getContainer()->get(Twig::class);
+try {
+
+    $guard  = $app->getContainer()->get(Guard::class);
+    $router = $app->getContainer()->get(Router::class);
+    $view   = $app->getContainer()->get(Twig::class);
+
+} catch (NotFoundExceptionInterface|ContainerExceptionInterface $error) {
+
+    // ...do something
+
+}
 
 /**
  * OUTER Group that applies CSRF to routes

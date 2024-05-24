@@ -18,7 +18,9 @@ use Illuminate\Translation\Translator;
 use Interop\Container\ContainerInterface;
 
 use Noodlehaus\Config;
+
 use Slim\{
+    Flash\Messages as Flash,
     Router,
     Views\Twig
 };
@@ -33,25 +35,27 @@ class BaseController {
      * BaseController dependencies
      */
     protected Config $config;
+    protected ContainerInterface $container;
+    protected Flash $flash;
     protected Mailer $mailer;
     protected Router $router;
     protected Translator $translator;
     protected Twig $view;
-    protected ContainerInterface $container;
     protected ValidatorInterface $validator;
 
     /**
      * BaseController constructor.
      *
-     * @param ContainerInterface $container
      * @param Config $config
+     * @param ContainerInterface $container
+     * @param Flash $flash
      * @param Mailer $mailer
      * @param Translator $translator
      * @param Router $router
      * @param Twig $view
      * @param ValidatorInterface $validator
      */
-    public function __construct(ContainerInterface $container, Config $config, Mailer $mailer, Router $router, Translator $translator, ValidatorInterface $validator, Twig $view) {
+    public function __construct(Config $config, ContainerInterface $container, Flash $flash, Mailer $mailer, Router $router, Translator $translator, ValidatorInterface $validator, Twig $view) {
 
         /*
          * NOTE!
@@ -63,8 +67,9 @@ class BaseController {
 
         $this->locales      = Locale::with([])->where('activated', '=', true)->get();
 
-        $this->container    = $container;
         $this->config       = $config;
+        $this->container    = $container;
+        $this->flash        = $flash;
         $this->mailer       = $mailer;
         $this->router       = $router;
         $this->translator   = $translator;

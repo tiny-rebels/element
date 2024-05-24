@@ -9,7 +9,12 @@ use Psr\Http\Message\{
 
 class DashboardController extends BaseController {
 
-    public function getDashboardOverview(Response $response) {
+    /**
+     * @param Response $response
+     *
+     * @return Response
+     */
+    public function getDashboardOverview(Response $response): Response {
 
         return $this->view->render($response, '/dashboard/overview.twig', [
 

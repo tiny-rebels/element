@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ece16552cf094c0be3f214aa59df1de",
+    "content-hash": "8080546fe9275412eca3781361bbc178",
     "packages": [
         {
             "name": "brick/math",
@@ -961,15 +961,16 @@
             "time": "2023-06-01T07:04:22+00:00"
         },
         {
-            "name": "element/social",
+            "name": "element/jwt-auth",
             "version": "dev-development",
             "dist": {
                 "type": "path",
-                "url": "K:/Git/Element/element-social",
-                "reference": "8a0554aa2285ab9eae848f00815174a239076515"
+                "url": "K:/Git/Element/packages/element-jwt-auth",
+                "reference": "2018deee99807d149ea282730f948f9367e72ae7"
             },
             "require": {
-                "guzzlehttp/guzzle": "^7.8"
+                "illuminate/database": "^8.83",
+                "symfony/var-dumper": "^5.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.6"
@@ -977,12 +978,12 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Element\\Social\\": "src/"
+                    "Element\\JwtAuth\\": "src/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Element\\Social\\Tests\\": "tests/"
+                    "Element\\JwtAuth\\Tests\\": "tests/"
                 }
             },
             "license": [
@@ -994,7 +995,7 @@
                     "email": "stefan@korfitz.com"
                 }
             ],
-            "description": "Social auth package for Element",
+            "description": "JWT authentication package for Element",
             "keywords": [
                 "Bootstrap3",
                 "Composer",
@@ -1020,17 +1021,78 @@
             }
         },
         {
-            "name": "element/unique",
-            "version": "3.0.1",
+            "name": "element/social",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tiny-rebels/element-unique.git",
-                "reference": "42f955d9f9880e50a99fd7e5f0e4f8e1b9c6a82b"
+                "url": "https://github.com/tiny-rebels/element-social.git",
+                "reference": "daabcb67e22d9dd261fddff0990da8aeb15e0c14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tiny-rebels/element-unique/zipball/42f955d9f9880e50a99fd7e5f0e4f8e1b9c6a82b",
-                "reference": "42f955d9f9880e50a99fd7e5f0e4f8e1b9c6a82b",
+                "url": "https://api.github.com/repos/tiny-rebels/element-social/zipball/daabcb67e22d9dd261fddff0990da8aeb15e0c14",
+                "reference": "daabcb67e22d9dd261fddff0990da8aeb15e0c14",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.8",
+                "symfony/var-dumper": "^5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Element\\Social\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "Stefan Korfitz",
+                    "email": "stefan@korfitz.com"
+                }
+            ],
+            "description": "Social auth package for Element",
+            "keywords": [
+                "JS",
+                "Tiny-Rebels",
+                "bootstrap3",
+                "composer",
+                "element",
+                "framework",
+                "mvc",
+                "npm",
+                "php-7",
+                "scss",
+                "slim3",
+                "twig",
+                "vue3",
+                "webpack"
+            ],
+            "support": {
+                "email": "stefan@korfitz.com",
+                "issues": "https://github.com/tiny-rebels/element-social/issues",
+                "source": "https://github.com/tiny-rebels/element-social/tree/3.0.0"
+            },
+            "time": "2024-05-20T18:34:21+00:00"
+        },
+        {
+            "name": "element/unique",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tiny-rebels/element-unique.git",
+                "reference": "7ebdbe8b86bc07e4936f660d585681e3bf22dc04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tiny-rebels/element-unique/zipball/7ebdbe8b86bc07e4936f660d585681e3bf22dc04",
+                "reference": "7ebdbe8b86bc07e4936f660d585681e3bf22dc04",
                 "shasum": ""
             },
             "suggest": {
@@ -1065,9 +1127,9 @@
             "support": {
                 "email": "stefan@korfitz.com",
                 "issues": "https://github.com/tiny-rebels/element-unique/issues",
-                "source": "https://github.com/tiny-rebels/element-unique/tree/3.0.1"
+                "source": "https://github.com/tiny-rebels/element-unique/tree/3.0.2"
             },
-            "time": "2024-05-15T14:24:24+00:00"
+            "time": "2024-05-20T08:18:13+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -5512,6 +5574,58 @@
             "time": "2018-08-22T16:12:18+00:00"
         },
         {
+            "name": "slim/flash",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slimphp/Slim-Flash.git",
+                "reference": "9aaff5fded3b54f4e519ec3d4ac74d3d1f2cbbbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slimphp/Slim-Flash/zipball/9aaff5fded3b54f4e519ec3d4ac74d3d1f2cbbbc",
+                "reference": "9aaff5fded3b54f4e519ec3d4ac74d3d1f2cbbbc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Slim\\Flash\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Lockhart",
+                    "email": "hello@joshlockhart.com",
+                    "homepage": "http://joshlockhart.com"
+                }
+            ],
+            "description": "Slim Framework Flash message service provider",
+            "homepage": "http://slimframework.com",
+            "keywords": [
+                "flash",
+                "framework",
+                "message",
+                "provider",
+                "slim"
+            ],
+            "support": {
+                "issues": "https://github.com/slimphp/Slim-Flash/issues",
+                "source": "https://github.com/slimphp/Slim-Flash/tree/master"
+            },
+            "time": "2017-10-22T10:35:05+00:00"
+        },
+        {
             "name": "slim/slim",
             "version": "3.12.5",
             "source": {
@@ -7905,16 +8019,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.10.2",
+            "version": "v3.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "7aaed0b8311a557cc8c4047a71fd03153a00e755"
+                "reference": "67f29781ffafa520b0bbfbd8384674b42db04572"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/7aaed0b8311a557cc8c4047a71fd03153a00e755",
-                "reference": "7aaed0b8311a557cc8c4047a71fd03153a00e755",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/67f29781ffafa520b0bbfbd8384674b42db04572",
+                "reference": "67f29781ffafa520b0bbfbd8384674b42db04572",
                 "shasum": ""
             },
             "require": {
@@ -7968,7 +8082,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.10.2"
+                "source": "https://github.com/twigphp/Twig/tree/v3.10.3"
             },
             "funding": [
                 {
@@ -7980,20 +8094,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-14T06:04:16+00:00"
+            "time": "2024-05-16T10:04:27+00:00"
         },
         {
             "name": "twilio/sdk",
-            "version": "8.0.1",
+            "version": "8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twilio/twilio-php.git",
-                "reference": "161fbeb588f367e35e70a86841406ff6f0810b14"
+                "reference": "547e6ceca9a1491a645065f344ddb592a3456298"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/161fbeb588f367e35e70a86841406ff6f0810b14",
-                "reference": "161fbeb588f367e35e70a86841406ff6f0810b14",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/547e6ceca9a1491a645065f344ddb592a3456298",
+                "reference": "547e6ceca9a1491a645065f344ddb592a3456298",
                 "shasum": ""
             },
             "require": {
@@ -8031,9 +8145,9 @@
             ],
             "support": {
                 "issues": "https://github.com/twilio/twilio-php/issues",
-                "source": "https://github.com/twilio/twilio-php/tree/8.0.1"
+                "source": "https://github.com/twilio/twilio-php/tree/8.1.0"
             },
-            "time": "2024-04-18T11:15:50+00:00"
+            "time": "2024-05-24T11:10:19+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -8256,7 +8370,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "element/social": 20
+        "element/jwt-auth": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

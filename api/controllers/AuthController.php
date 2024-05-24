@@ -2,6 +2,10 @@
 
 namespace api\controllers;
 
+use Element\JwtAuth\Auth;
+
+use Noodlehaus\Config;
+
 use Psr\Http\Message\{
     ServerRequestInterface as Request,
     ResponseInterface as Response
@@ -17,9 +21,6 @@ class AuthController extends BaseController {
      */
     public function fetchToken(Request $request, Response $response) {
 
-        //dump("it works from api auth controller");
-        //die;
-
         $email      = $request->getParam('email');
         $password   = $request->getParam('password');
 
@@ -33,7 +34,9 @@ class AuthController extends BaseController {
 
         return $response->withJson([
 
-            'token' => $token
+            'min_to_expire' => $this->config->get('auth.jwt.expiry'),
+            'token_type'    => "Bearer",
+            'access_token'  => $token,
         ]);
     }
 }

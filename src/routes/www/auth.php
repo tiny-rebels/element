@@ -6,6 +6,11 @@ use app\middleware\security\{
     CsrfViewMiddleware
 };
 
+use Psr\Container\{
+    ContainerExceptionInterface,
+    NotFoundExceptionInterface
+};
+
 use Slim\{
     Csrf\Guard,
     Router,
@@ -15,21 +20,25 @@ use Slim\{
 /**
  * Pulling container items
  */
-$guard  = $app->getContainer()->get(Guard::class);
-$router = $app->getContainer()->get(Router::class);
-$view   = $app->getContainer()->get(Twig::class);
+try {
+
+    $guard  = $app->getContainer()->get(Guard::class);
+    $router = $app->getContainer()->get(Router::class);
+    $view   = $app->getContainer()->get(Twig::class);
+
+} catch (NotFoundExceptionInterface|ContainerExceptionInterface $error) {
+
+    // ...do something
+
+}
 
 /**
  * OUTER Group that applies CSRF to routes
  *
- *
+ * @var $app
+ * @var $router
  */
-$app->group('/auth', function () use($app) {
-
-    /**
-     * Pulling container items
-     */
-    $router = $app->getContainer()->get(Router::class);
+$app->group('/auth', function () use($app, $router) {
 
     /**
      * INNER Group that DOESN'T allow the user to be signed in!...
@@ -41,6 +50,12 @@ $app->group('/auth', function () use($app) {
          */
         $app->get('/sign-in', ['app\controllers\AuthController', 'getSignIn'])->setName('auth.sign-in');
         $app->post('/sign-in', ['app\controllers\AuthController', 'postSignIn']);
+
+        /**
+         * rendering view : AUTH -> RESET PASSWORD
+         */
+        $app->get('/reset-password', ['app\controllers\AuthController', 'getPasswordReset'])->setName('auth.password-reset');
+        $app->post('/reset-password', ['app\controllers\AuthController', 'postPasswordReset']);
 
         /**
          * rendering view : AUTH -> SIGN-UP
@@ -57,11 +72,26 @@ $app->group('/auth', function () use($app) {
     })->add(new GuestMiddleware($router));
 
     /**
+     * INNER Group that DOESN'T allow the user to be signed in!...
+     */
+    $app->group('/sso', function () use($app) {
+
+        /* SSO auth -> SIGN-IN -> WITH -> {SERVICE} */
+        $this->get('/sign-in/with/{service}', ['app\controllers\AuthController', 'getSocialSignIn'])->setName('auth.sso.login-with-service');
+        $this->get('/sign-in/with/{service}/status', ['app\controllers\AuthController', 'getSocialSignInStatus']);
+
+        /* SSO auth -> LINK-ACCOUNTS */
+        $this->get('/link-accounts/{uid}', ['app\controllers\AuthController', 'getLinkAccounts'])->setName('auth.sso.link-accounts');
+        $this->post('/link-accounts/{uid}', ['app\controllers\AuthController', 'postLinkAccounts']);
+
+    })->add(new GuestMiddleware($router));
+
+    /**
      * INNER Group that DOES require the user to be signed in!...
      */
     $app->group('', function () use($app) {
 
-        /* auth -> LOCK SYSTEM  -> TODO */
+        /* auth -> LOCK SYSTEM */ // TODO
         $app->get('/lock-system', [app\controllers\AuthController::class, 'getSystemLock'])->setName('auth.lock-system');
         $app->post('/lock-system', [app\controllers\AuthController::class, 'postSystemLock']);
 

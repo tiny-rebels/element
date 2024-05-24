@@ -2,10 +2,12 @@
 
 namespace app\providers\jwt;
 
-use Firebase\JWT\Key;
-use Interop\Container\ContainerInterface;
+use Firebase\JWT\{
+    Key,
+    JWT
+};
 
-use Firebase\JWT\JWT;
+use Interop\Container\ContainerInterface;
 
 use Noodlehaus\Config;
 

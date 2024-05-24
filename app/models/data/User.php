@@ -2,11 +2,9 @@
 
 namespace app\models\data;
 
-use app\handlers\auth\contracts\JwtSubject;
+use app\handlers\auth\jwt\contracts\JwtSubject;
 
-use Illuminate\Database\Eloquent\{
-    Model
-};
+use Illuminate\Database\Eloquent\{Model};
 
 /**
  * @method static paginate(int $per_page)
@@ -50,5 +48,13 @@ class User extends Model implements JwtSubject {
     public function getJwtIdentifier() : int {
 
         return $this->id;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function sso() {
+
+        return $this->hasMany(UserSocial::class);
     }
 }

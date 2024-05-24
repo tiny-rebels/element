@@ -1,22 +1,20 @@
 <?php
 
-use function DI\get;
-
 use app\handlers\{
     errors\NotFoundHandler,
     mailer\Mailer
 };
 
 use app\handlers\auth\{
-    JwtAuth,
-    JwtClaims,
-    JwtFactory,
-    Parser
+    jwt\JwtAuth,
+    jwt\JwtClaims,
+    jwt\JwtFactory,
+    jwt\Parser
 };
 
 use app\handlers\notifier\{
     Slack as SlackNotifier,
-    Twilio as TwilioNotifier,
+    Twilio as TwilioNotifier
 };
 
 use app\listeners\endpoint\{
@@ -32,14 +30,15 @@ use app\providers\{
 };
 
 use app\validations\{
-    Validator,
-    contracts\ValidatorInterface
+    contracts\ValidatorInterface,
+    Validator
 };
 
 use app\views\{
-    Factory,
     extensions\GetEnvExtension,
-    extensions\TranslationExtension
+    extensions\GetYamlExtension,
+    extensions\TranslationExtension,
+    Factory
 };
 
 use Cartalyst\Sentinel\Native\Facades\Sentinel;
@@ -47,21 +46,20 @@ use Cartalyst\Sentinel\Native\Facades\Sentinel;
 use GuzzleHttp\Client as HttpClient;
 
 use Illuminate\{
-    Translation\Translator,
+    Filesystem\Filesystem,
     Translation\FileLoader,
-    Filesystem\Filesystem
+    Translation\Translator
 };
 
 use Intervention\Image\ImageManager;
 
 use Noodlehaus\Config;
 
-use Psr\Container\{
-    ContainerInterface
-};
+use Psr\Container\{ContainerInterface};
 
 use Slim\{
     Csrf\Guard,
+    Flash\Messages,
     Router,
     Views\Twig,
     Views\TwigExtension
@@ -72,6 +70,8 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 use Twig\Extra\Intl\IntlExtension;
 
 use Twilio\Rest\Client as Twilio;
+
+use function DI\get;
 
 /**
  * attaching : TO CONTAINER ->
@@ -171,6 +171,12 @@ return [
         );
     },
 
+    /* FLASH MESSAGES */
+    Messages::class => function () {
+
+        return new Messages;
+    },
+
     /* Guzzle HttpClient */
     HttpClient::class => function () {
 
@@ -225,6 +231,10 @@ return [
 
         $twig->addExtension(new GetEnvExtension());
 
+        $twig->addExtension(new GetYamlExtension(
+            $container->get(Config::class)
+        ));
+
         $twig->addExtension(new IntlExtension());
 
         $twig->addExtension(new TranslationExtension(
@@ -235,6 +245,8 @@ return [
         $twig->getEnvironment()->addGlobal('session', $_SESSION);
 
         $twig->getEnvironment()->addGlobal('current_path', $container->get('request')->getUri());
+
+        $twig->getEnvironment()->addGlobal('flash', $container->get(Messages::class));
 
         $twig->getEnvironment()->addGlobal('auth', [
 

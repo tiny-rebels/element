@@ -5,16 +5,7 @@
 {% block content %}
 
     <!-- include : COMPANY LOGO & NAME -->
-    <nav id="auth-navbar" class="navbar navbar-expand-lg position-absolute top-0 z-index-3 my-5">
-        <div class="container ml-30">
-            <a href="https://www.tune-trafikskole.dk" id="navbar-brand" class="navbar-brand ms-lg-0 ms-3">
-                <img src="{{ base_url() }}/public/assets/ic_app_logo_round_with_background.png" style="height: 32px" class="navbar-brand-img" alt="main_logo">
-                <span class="ms-1" style="vertical-align: middle">
-                tune trafikskole
-            </span>
-            </a>
-        </div>
-    </nav>
+    {{ include('/auth/_partials/name-and-logo.twig') }}
 
     <!-- // -->
     <main class="main-content mt-0">
@@ -28,24 +19,29 @@
                                 <div class="card-body px-lg-5 py-lg-5 text-center">
                                     <div class="text-center text-muted mb-4">
                                         <h2>
+                                            {{ credentials }}
+                                        </h2>
+                                    </div>
+                                    <div class="text-center text-muted mb-4">
+                                        <h2>
                                             {{ trans('auth.uac.call_to_action') }}
                                         </h2>
                                     </div>
                                     <form id="activate-user" action="{{ path_for('auth.activate-user') }}" method="post">
-                                        <div class="row gx-2 gx-sm-3">
+                                        <div class="row token-inputs gx-2 gx-sm-3">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <input id="input_1" name="input_1" type="text" class="form-control form-control-lg center-text {{ errors.input_1 ? 'is-invalid' }} : ''" maxlength="1" autocomplete="off" autocapitalize="off" aria-label="input_1" style="padding: 12px 0; font-size: 18px; font-weight: bold">
+                                                    <input id="input_1" name="input_1" type="text" onkeyup="jumpToNextPcInput(2)" class="form-control form-control-lg center-text {{ errors.input_1 ? 'is-invalid' }} : ''" maxlength="1" autocomplete="off" autocapitalize="off" aria-label="input_1" style="padding: 12px 0; font-size: 18px; font-weight: bold">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <input id="input_2" name="input_2" type="text" class="form-control form-control-lg center-text {{ errors.input_2 ? 'is-invalid' }} : ''" maxlength="1" autocomplete="off" autocapitalize="off" aria-label="input_2" style="padding: 12px 0; font-size: 18px; font-weight: bold">
+                                                    <input id="input_2" name="input_2" type="text" onkeyup="jumpToNextPcInput(3)" class="form-control form-control-lg center-text {{ errors.input_2 ? 'is-invalid' }} : ''" maxlength="1" autocomplete="off" autocapitalize="off" aria-label="input_2" style="padding: 12px 0; font-size: 18px; font-weight: bold">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <input id="input_3" name="input_3" type="text" class="form-control form-control-lg center-text {{ errors.input_3 ? 'is-invalid' }} : ''" maxlength="1" autocomplete="off" autocapitalize="off" aria-label="input_3" style="padding: 12px 0; font-size: 18px; font-weight: bold">
+                                                    <input id="input_3" name="input_3" type="text" onkeyup="jumpToNextPcInput(5)" class="form-control form-control-lg center-text {{ errors.input_3 ? 'is-invalid' }} : ''" maxlength="1" autocomplete="off" autocapitalize="off" aria-label="input_3" style="padding: 12px 0; font-size: 18px; font-weight: bold">
                                                 </div>
                                             </div>
                                             <div class="col">
@@ -55,12 +51,12 @@
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <input id="input_5" name="input_5" type="text" class="form-control form-control-lg center-text {{ errors.input_5 ? 'is-invalid' }} : ''" maxlength="1" autocomplete="off" autocapitalize="off" aria-label="input_5" style="padding: 12px 0; font-size: 18px; font-weight: bold">
+                                                    <input id="input_5" name="input_5" type="text" onkeyup="jumpToNextPcInput(6)" class="form-control form-control-lg center-text {{ errors.input_5 ? 'is-invalid' }} : ''" maxlength="1" autocomplete="off" autocapitalize="off" aria-label="input_5" style="padding: 12px 0; font-size: 18px; font-weight: bold">
                                                 </div>
                                             </div>
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <input id="input_6" name="input_6" type="text" class="form-control form-control-lg center-text {{ errors.input_6 ? 'is-invalid' }} : ''" maxlength="1" autocomplete="off" autocapitalize="off" aria-label="input_6" style="padding: 12px 0; font-size: 18px; font-weight: bold">
+                                                    <input id="input_6" name="input_6" type="text" onkeyup="jumpToNextPcInput(7)" class="form-control form-control-lg center-text {{ errors.input_6 ? 'is-invalid' }} : ''" maxlength="1" autocomplete="off" autocapitalize="off" aria-label="input_6" style="padding: 12px 0; font-size: 18px; font-weight: bold">
                                                 </div>
                                             </div>
                                             <div class="col">
@@ -114,6 +110,15 @@
 
             $('#auth-navbar').addClass(" shadow-none w-100 navbar-transparent mt-4");
         });
+
+    </script>
+
+    <script>
+
+        function jumpToNextPcInput(index){
+
+            document.getElementById('input_' + index).focus();
+        }
 
     </script>
 

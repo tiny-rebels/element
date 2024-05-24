@@ -29,6 +29,7 @@ module.exports = {
 
         'back/app'                      : 'js/back/app.js',
         'back/app-demo'                 : 'js/back/app-demo.js',
+        'back/keymap'                   : 'js/back/keymap.js',
 
         'vendors/choices'               : 'js/vendors/choices.js',
         'vendors/dropzone'              : 'js/vendors/dropzone.js',

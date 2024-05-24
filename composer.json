@@ -22,7 +22,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "K:\\Git\\Element\\element-social",
+            "url": "K:\\Git\\Element\\packages\\element-jwt-auth",
             "options": {
                 "symlink": false
             }
@@ -32,7 +32,8 @@
         "ext-json": "*",
         "cartalyst/sentinel": "^5.0",
         "dragonmantank/cron-expression": "^3.3",
-        "element/social": "dev-development",
+        "element/jwt-auth": "dev-development",
+        "element/social": "^3.0",
         "element/unique": "^3.0",
         "firebase/php-jwt": "^6.10",
         "guzzlehttp/guzzle": "~7",
@@ -51,6 +52,7 @@
         "respect/validation": "1.1",
         "robmorgan/phinx": "^0.14.0",
         "slim/csrf": "0.8.3",
+        "slim/flash": "^0.4.0",
         "slim/slim": "~3",
         "slim/twig-view": "^2.5",
         "swiftmailer/swiftmailer": "^6.3",

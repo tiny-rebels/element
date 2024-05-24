@@ -1,10 +1,9 @@
 <?php
 
-namespace app\handlers\auth;
+namespace app\handlers\auth\jwt;
 
+use app\handlers\auth\jwt\contracts\JwtSubject;
 use app\providers\auth\JwtAuthServiceProvider;
-
-use app\handlers\auth\contracts\JwtSubject;
 
 class JwtAuth {
 

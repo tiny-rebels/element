@@ -18,26 +18,12 @@
     <!-- Section : head -->
     {{ include('/@shared/head.twig') }}
 
-    <body class="">
-
-{#        <!-- Navbar -->#}
-{#        {% include '/auth/_partials/navbar.twig' %}#}
-
-{#        <main class="main-content mt-0">#}
-
-{#            <!--------------------------#}
-{#             | Page content comes here |#}
-{#             -------------------------->#}
-{#            {% block content %}{% endblock %}#}
-
-{#            <!-- Footer -->#}
-{#            {% include '/auth/_partials/footer.twig' %}#}
-
-{#        </main>#}
+    <body class="bg-gray-100">
 
         <!--------------------------
          | Page content comes here |
          -------------------------->
+
         {% block content %}{% endblock %}
 
         <!--------------------------

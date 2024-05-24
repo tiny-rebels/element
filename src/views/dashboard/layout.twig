@@ -18,7 +18,7 @@
     <!-- Section : head -->
     {{ include('/@shared/head.twig') }}
 
-    <body class="g-sidenav-show  bg-gray-100">
+    <body class="bg-gray-100 g-sidenav-show">
 
         <!-- Sidebar -->
         {% include '/dashboard/_partials/sidebar.twig' %}
@@ -63,8 +63,11 @@
         <!-- Pace -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha512-2cbsQGdowNDPcKuoBd2bCcsJky87Mv0LEtD/nunJUgk6MOYTgVMGihS/xCEghNf04DPhNiJ4DZw5BxDd1uyOdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+        <!-- Soft UI app -->
         <script src="{{ base_url() }}/public/js/back/app.min.js"></script>
+
+        <!-- keymap -->
+        <script src="{{ base_url() }}/public/js/back/keymap.min.js"></script>
 
         <!-- Vue.js -->
         <script src="{{ base_url() }}/public/js/vue/main.min.js"></script>

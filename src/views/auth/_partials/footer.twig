@@ -1,5 +1,5 @@
 <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
-<footer class="footer py-5">
+<footer class="auth-footer">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mb-4 mx-auto text-center">
@@ -43,9 +43,7 @@
         <div class="row">
             <div class="col-8 mx-auto text-center mt-1">
                 <p class="mb-0 text-secondary">
-                    Copyright © <script>
-                        document.write(new Date().getFullYear())
-                    </script> Soft by Creative Tim.
+                    {{ trans('auth.foot.cc_text') }} <script>document.write(new Date().getFullYear())</script> {{ trans('auth.foot.cc_author') }}
                 </p>
             </div>
         </div>

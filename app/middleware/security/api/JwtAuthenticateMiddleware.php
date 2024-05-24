@@ -2,7 +2,7 @@
 
 namespace app\middleware\security\api;
 
-use app\handlers\auth\JwtAuth;
+use app\handlers\auth\jwt\JwtAuth;
 
 use Exception;
 

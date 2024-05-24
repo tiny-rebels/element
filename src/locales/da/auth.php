@@ -30,6 +30,7 @@ return [
     'usi.password_label'            => "Adgangskode",
     'usi.password_placeholder'      => "Adgangskode",
     'usi.remember_me'               => "Husk mig",
+    'usi.reset_password'            => "[ nulstil ]",
     'usi.login_button'              => "Login",
     'usi.button_separator'          => "eller",
     'usi.go_to_signup_button'       => "Opret bruger",
@@ -90,6 +91,31 @@ return [
 
     /*--------------------------------------------------------------|
     |                                                               |
+    |   view -> AUTH -> Reset password (_urp)                       |
+    |                                                               |
+    ---------------------------------------------------------------*/
+
+    /**
+     * app -> title & meta
+     */
+    'urp.page_title'                => "Aktivér bruger | [APP-NAME]",
+
+    /**
+     * app -> submit form
+     */
+    'urp.call_to_action'            => "Nulstil din adgangskode  🔐️️",
+    'urp.reset_password_button'     => "Nulstil",
+    'urp.remember_pre_txt'          => "Kommet i tanke om den?",
+    'urp.remember_cta_txt'          => "Gå til login",
+
+    /**
+     * app -> illustration text
+     */
+    'urp.illustration_txt_heading'  => "Vigtigt! 📢 Sørg for at lave det om senere til dit eget...",
+    'urp.illustration_txt_subtitle' => "Dette kan du gøre inde på din profil ved at logge på med den midlertidige adgandskode",
+
+    /*--------------------------------------------------------------|
+    |                                                               |
     |   view -> AUTH -> Activate account (_uac)                     |
     |                                                               |
     ---------------------------------------------------------------*/
@@ -145,10 +171,45 @@ return [
     'uls.illustration_txt_heading'  => "Pro tip! Sørg for at lave et superhemmeligtkodeord",
     'uls.illustration_txt_subtitle' => "Det kunne f.eks. være hele bacon ipsum, hvis du kan den?🤔",
 
+    /*--------------------------------------------------------------|
+    |                                                               |
+    |   view -> AUTH -> LINK ACCOUNTS (_ula)                        |
+    |                                                               |
+    ---------------------------------------------------------------*/
+
+    /**
+     * app -> title & meta
+     */
+    'ula.page_title'                => "Sammenkæd | [APP-NAME]",
+
+    /**
+     * app -> heading & subtitle
+     */
+    'ula.heading'                   => "Social Sign-On",
+    'ula.subtitle'                  => "Sådan 👏 Nu mangler du bare at forbinde din konto med din sociale profil ✨🪅",
+
+    /**
+     * app -> submit form
+     */
+    'ula.call_to_action'            => "Link kontoer",
+    'ula.email_label'               => "Email",
+    'ula.email_placeholder'         => "Email",
+    'ula.password_label'            => "Adgangskode",
+    'ula.password_placeholder'      => "Adgangskode",
+    'ula.link_button'               => "Sammenkæd",
+    'ula.user_not_created_text'     => "Er du ikke allerede oprettet?",
+    'ula.user_not_created_link'     => "Start her!",
+
+    /*--------------------------------------------------------------|
+    |                                                               |
+    |   view -> AUTH -> FOOTER (_foot)                              |
+    |                                                               |
+    ---------------------------------------------------------------*/
 
     /**
      * app -> footer (_foot)
      */
-    'foot.cc_text'                  => "Copyright © 2023 Stefan Korfitz",
+    'foot.cc_text'                  => "Copyright ©",
+    'foot.cc_author'                => ". Lavet med ❤️ af Stefan Korfitz",
 
 ];
