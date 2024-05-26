@@ -1,16 +1,3 @@
-/**
- *  APP colors
- *
- *  Please Note! These colors are considered as a fallback color..
- *  Which means, that they might(?) gets overriden in each skin
- */
-
-/**
- *  APP colors -> Accents
- */
-$accent:      #42E695;
-$accentLight: #a8ff78;
-$accentDark:  #78ffd6;
 
 // $soft-background-color: #fbfbfb !default;
 
@@ -71,7 +58,9 @@ $colors: (
 ) !default;
 // scss-docs-end colors-map
 
-$nexus:         $accent !default;
+$nexus:         #42E695 !default;
+$sunset-malibu: #fd5581 !default;
+$deep-sea:      #4CA1AF !default;
 $primary:       #cb0c9f !default;
 $secondary:     #8392AB !default;
 $info:          #17c1e8 !default;
@@ -84,26 +73,31 @@ $darkGrey:      #444 !default;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-    "nexus":      $accent,
-    "primary":    $primary,
-    "secondary":  $secondary,
-    "success":    $success,
-    "info":       $info,
-    "warning":    $warning,
-    "danger":     $danger,
-    "light":      $light,
-    "dark":       $dark,
-    "white":      $white
+    "nexus":          $nexus,
+    "sunset-malibu":  $sunset-malibu,
+    "deep-sea":       $deep-sea,
+    "primary":        $primary,
+    "secondary":      $secondary,
+    "success":        $success,
+    "info":           $info,
+    "warning":        $warning,
+    "danger":         $danger,
+    "light":          $light,
+    "dark":           $dark,
+    "white":          $white
 ) !default;
 // scss-docs-end theme-colors-map
 
 
 // Gradient colors
-$nexus-gradient:                $accent !default;
-$nexus-gradient-state:          $accentLight !default;
+$nexus-gradient:                #42E695 !default;
+$nexus-gradient-state:          #a8ff78 !default;
 
 $sunset-malibu-gradient:        #fd5581 !default;
 $sunset-malibu-gradient-state:  #fd8b55 !default;
+
+$deep-sea-gradient:             #2C3E50 !default;
+$deep-sea-gradient-state:       #4CA1AF !default;
 
 $primary-gradient:              #7928CA !default;
 $primary-gradient-state:        #FF0080 !default;
@@ -136,6 +130,7 @@ $dark-gradient-state-dark:      #1a2035 !default;
 $theme-gradient-colors: (
         "nexus":          ($nexus-gradient, $nexus-gradient-state),
         "sunset-malibu":  ($sunset-malibu-gradient, $sunset-malibu-gradient-state),
+        "deep-sea":       ($deep-sea-gradient, $deep-sea-gradient-state),
         "primary":        ($primary-gradient, $primary-gradient-state),
         "secondary":      ($secondary-gradient, $secondary-gradient-state),
         "success":        ($success-gradient, $success-gradient-state),
@@ -385,3 +380,18 @@ $cyans: (
 // The gradient which is added to components if `$enable-gradients` is `true`
 // This gradient is also added to elements with `.bg-gradient`
 $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
+
+// text gradient
+$text-gradient-bg-clip:           text !default;
+$text-gradient-text-fill:         transparent !default;
+$text-gradient-position:          relative !default;
+$text-gradient-zindex:            1 !default;
+$text-gradient-bg-nexus:          linear-gradient(310deg, #42E695, #a8ff78) !default;
+$text-gradient-bg-sunset-malibu:  linear-gradient(310deg, #fd5581, #fd8b55) !default;
+$text-gradient-bg-deep-sea:       linear-gradient(310deg, #2C3E50, #4CA1AF) !default;
+$text-gradient-bg-primary:        linear-gradient(310deg, #7928CA, #FF0080) !default;
+$text-gradient-bg-info:           linear-gradient(310deg, #2152FF, #21D4FD) !default;
+$text-gradient-bg-success:        linear-gradient(310deg, #17AD37, #C1E823) !default;
+$text-gradient-bg-warning:        linear-gradient(310deg, #F53939, #FBCF33) !default;
+$text-gradient-bg-danger:         linear-gradient(310deg, #D60808, #FF6690) !default;
+$text-gradient-bg-dark:           linear-gradient(310deg, #141727, #3A416F) !default;

@@ -22,7 +22,7 @@ class SetupController extends BaseController {
             'app_color' => $request->getParam('app_color')
         ]);
 
-        return $response->withRedirect($this->router->pathFor('dashboard.overview')); // TODO : Should be replaced with last url
+        return $response->withStatus(302)->withHeader('Location', $_SESSION['currentRoute']);
     }
 
     /**
@@ -38,7 +38,8 @@ class SetupController extends BaseController {
             'app_sidebar_type' => $request->getParam('sidebar_type')
         ]);
 
-        return $response->withRedirect($this->router->pathFor('dashboard.overview')); // TODO : Should be replaced with last url
+        return $response->withStatus(302)->withHeader('Location', $_SESSION['currentRoute']);
+        //return $response->withRedirect($this->router->pathFor('dashboard.overview')); // TODO : Should be replaced with last url
     }
 
     /**
@@ -64,6 +65,7 @@ class SetupController extends BaseController {
 
         }
 
-        return $response->withRedirect($this->router->pathFor('dashboard.overview')); // TODO : Should be replaced with last url
+        return $response->withStatus(302)->withHeader('Location', $_SESSION['currentRoute']);
+        //return $response->withRedirect($this->router->pathFor('dashboard.overview')); // TODO : Should be replaced with last url
     }
 }

@@ -4,17 +4,11 @@
             <span class="avatar avatar-sm rounded-circle">
                 <img alt="Image placeholder" src="{{ auth.user.img_avatar }}">
             </span>
-{#            <div class="media-body  ml-2 d-none d-lg-block">#}
-{#                <span class="mb-0 text-sm  font-weight-bold">#}
-{#                    John Snow#}
-{#                </span>#}
-{#            </div>#}
         </div>
     </a>
     <ul class="dropdown-menu dropdown-menu-end px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
         <li class="mb-2">
-{#            <a class="dropdown-item border-radius-md" href="{{ path_for('user.profile-overview') }}">#}
-            <a class="dropdown-item border-radius-md" href="#">
+            <a class="dropdown-item border-radius-md" href="{{ path_for('user.profile') }}">
                 <div class="d-flex py-1">
                     <div class="my-auto">
                         <i class="fa fa-user me-sm-1"></i>

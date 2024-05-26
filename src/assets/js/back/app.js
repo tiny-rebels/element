@@ -78,13 +78,20 @@ import 'images/curved/img_white_curved.jpg'
 /**
  * import illustrations into webpack bundler
  */
-import 'images/illustrations/illu_chat.png'
-import 'images/illustrations/illu_chat_danger.png'
-import 'images/illustrations/illu_error_404.png'
-import 'images/illustrations/illu_error_500.png'
-import 'images/illustrations/illu_lock.png'
-import 'images/illustrations/illu_lock_dark.png'
-import 'images/illustrations/illu_rocket_white.png'
+import 'images/illustrations/img_illu_chat.png'
+import 'images/illustrations/img_illu_chat_danger.png'
+import 'images/illustrations/img_illu_error_404.png'
+import 'images/illustrations/img_illu_error_500.png'
+import 'images/illustrations/img_illu_lock.png'
+import 'images/illustrations/img_illu_lock_dark.png'
+import 'images/illustrations/img_illu_rocket_white.png'
+
+/**
+ * import placeholders into webpack bundler (visit: https://placehold.co/)
+ */
+import 'images/placeholders/img_placeholder_160x160.svg'
+import 'images/placeholders/img_placeholder_800x800.svg'
+import 'images/placeholders/img_placeholder_1920x1080.svg'
 
 // =========================================================
 // Soft UI Dashboard - v1.0.7

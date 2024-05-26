@@ -198,6 +198,7 @@ class AuthController extends BaseController {
 
         return $this->view->render($response, '/auth/lock-system.twig', [
 
+            'setup'     => $this->appSetup,
             'locales'   => $this->locales,
         ]);
     }
@@ -210,7 +211,40 @@ class AuthController extends BaseController {
      */
     public function postSystemLock(Request $request, Response $response) {
 
-        // ...do something
+        /**
+         * doing some basic validation BEFORE signup is executed
+         */
+        $validation = $this->validator->validate($request, [
+
+            'password' => v::notEmpty(),
+        ]);
+
+        /**
+         * if validation fails, then we redirect the user to : /auth/lock-system
+         */
+        if ($validation->fails()) {
+
+            // TODO : flash a message explaining why it fails...
+            return $response->withRedirect($this->router->pathFor('auth.lock-system'));
+        }
+
+        $authenticatedUser = Sentinel::check();
+
+        $credentials = [
+
+            'email'    => $authenticatedUser->email,
+            'password' => $request->getParam('password'),
+        ];
+
+        $passwordCheck = Sentinel::validateCredentials($authenticatedUser, $credentials);
+
+        if (!$passwordCheck) {
+
+            // TODO : flash a message explaining why it fails...
+            return $response->withRedirect($this->router->pathFor('auth.lock-system'));
+        }
+
+        return $response->withRedirect($this->router->pathFor('dashboard.overview'));
     }
 
     /**

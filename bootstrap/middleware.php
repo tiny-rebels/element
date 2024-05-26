@@ -1,6 +1,8 @@
 <?php global $app;
 
 use app\middleware\{
+    other\CurrentRouteMiddleware,
+    other\OldInputMiddleware,
     validations\ErrorsMiddleware
 };
 
@@ -15,8 +17,8 @@ $view = $app->getContainer()->get(Twig::class);
  * setting up : MIDDLEWARE
  */
 /* -> CURRENT ROUTE */
-//$app->add(new CurrentRouteMiddleware());
+$app->add(new CurrentRouteMiddleware());
 /* -> OLD INPUT */
-//$app->add(new OldInputMiddleware($container->get(Twig::class)));
+$app->add(new OldInputMiddleware($view));
 /* -> VALIDATION */
 $app->add(new ErrorsMiddleware($view));

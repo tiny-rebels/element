@@ -26,6 +26,7 @@ class User extends Model implements JwtSubject {
 
         'email',
         'password',
+        'img_cover',
         'img_avatar',
         'first_name',
         'last_name',

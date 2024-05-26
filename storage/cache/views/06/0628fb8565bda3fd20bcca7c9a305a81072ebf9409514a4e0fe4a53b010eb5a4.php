@@ -13,7 +13,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* ./app.twig */
+/* ./layout.twig */
 class __TwigTemplate_b0a459840282c7612afdfa2eaf6e8172f19e490ac488dd4c1549dfe0cf7be39e extends Template
 {
     private $source;
@@ -79,7 +79,7 @@ class __TwigTemplate_b0a459840282c7612afdfa2eaf6e8172f19e490ac488dd4c1549dfe0cf7
 
             ";
         // line 42
-        yield from         $this->loadTemplate("/home/_partials/header.twig", "./app.twig", 42)->unwrap()->yield($context);
+        yield from         $this->loadTemplate("/home/_partials/header.twig", "./layout.twig", 42)->unwrap()->yield($context);
         // line 43
         yield "
             ";
@@ -114,7 +114,7 @@ class __TwigTemplate_b0a459840282c7612afdfa2eaf6e8172f19e490ac488dd4c1549dfe0cf7
      */
     public function getTemplateName()
     {
-        return "./app.twig";
+        return "./layout.twig";
     }
 
     /**
@@ -188,6 +188,6 @@ class __TwigTemplate_b0a459840282c7612afdfa2eaf6e8172f19e490ac488dd4c1549dfe0cf7
         <script src=\"{{ base_url() }}/public/js/vue/main.min.js\"></script>
 
     </body>
-</html>", "./app.twig", "/var/www/tune-trafikskole.dk/portfolio/src/views/app.twig");
+</html>", "./layout.twig", "/var/www/tune-trafikskole.dk/portfolio/src/views/layout.twig");
     }
 }

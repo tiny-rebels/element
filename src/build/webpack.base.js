@@ -141,6 +141,10 @@ module.exports = {
                 {
                     from: path.join(__dirname, './static/sitemap.xml'),
                     to: '.'
+                },
+                {
+                    from: path.join(__dirname, './../assets/scss/@global/plugins/pace'),
+                    to: 'css/plugins/[name].min.css'
                 }
             ]
         }),

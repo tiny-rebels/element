@@ -20,8 +20,38 @@
     </title>
 
     <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ base_url() }}/public/css/back/app.min.css" rel="stylesheet" />
+
+    <!-- Pace.js styles -->
+    {% if setup.app_color is same as("primary") %}
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-primary.min.css">
+
+    {% elseif setup.app_color is same as("info") %}
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-info.min.css">
+
+    {% elseif setup.app_color is same as("success") %}
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-success.min.css">
+
+    {% elseif setup.app_color is same as("warning") %}
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-warning.min.css">
+
+    {% elseif setup.app_color is same as("danger") %}
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-danger.min.css">
+
+    {% elseif setup.app_color is same as("nexus") %}
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-nexus.min.css">
+
+    {% elseif setup.app_color is same as("sunset-malibu") %}
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-sunset-malibu.min.css">
+
+    {% elseif setup.app_color is same as("deep-sea") %}
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-deep-sea.min.css">
+
+    {% else %}
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-dark.min.css">
+
+    {% endif %}
 
 </head>
