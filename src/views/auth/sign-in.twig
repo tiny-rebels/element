@@ -29,7 +29,6 @@
                         <div class="card z-index-0">
                             <div class="card-header text-center pt-4">
                                 <h5>
-                                    Register with
                                     {{ trans('auth.usi.call_to_action') }}
                                 </h5>
                             </div>
@@ -62,7 +61,7 @@
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn bg-gradient-{{ setup.app_color }} w-100 my-4 mb-2">
-                                            Sign in
+                                            {{ trans('auth.usi.login_button') }}
                                         </button>
                                         <!-- CSRF protection -->
                                         {{ csrf.field | raw }}

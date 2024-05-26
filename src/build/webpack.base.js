@@ -144,7 +144,7 @@ module.exports = {
                 },
                 {
                     from: path.join(__dirname, './../assets/scss/@global/plugins/pace'),
-                    to: 'css/plugins/[name].min.css'
+                    to: 'css/plugins/pace/[name].min.css'
                 }
             ]
         }),

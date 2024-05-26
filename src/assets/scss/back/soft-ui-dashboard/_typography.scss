@@ -205,6 +205,18 @@ p {
   &.text-dark {
     background-image: $text-gradient-bg-dark;
   }
+  &.text-nexus {
+    background-image: $text-gradient-bg-nexus;
+  }
+  &.text-sunset-malibu {
+    background-image: $text-gradient-bg-sunset-malibu;
+  }
+  &.text-deep-sea {
+    background-image: $text-gradient-bg-deep-sea;
+  }
+
+  // insert your own here...
+
 }
 
 .blockquote {

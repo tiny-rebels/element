@@ -37,8 +37,11 @@ class AuthController extends BaseController {
 
         return $this->view->render($response, '/auth/sign-in.twig', [
 
+            'pageTitle' => $this->translator->get('auth.usi.page_title'),
+
             'setup'     => $this->appSetup,
             'locales'   => $this->locales,
+
         ]);
     }
 
@@ -115,6 +118,8 @@ class AuthController extends BaseController {
 
         return $this->view->render($response, '/auth/reset-password.twig', [
 
+            'pageTitle' => $this->translator->get('auth.urp.page_title'),
+
             'setup'     => $this->appSetup,
             'locales'   => $this->locales,
         ]);
@@ -128,6 +133,8 @@ class AuthController extends BaseController {
     public function getSignUp(Response $response): Response {
 
         return $this->view->render($response, '/auth/sign-up.twig', [
+
+            'pageTitle' => $this->translator->get('auth.usu.page_title'),
 
             'setup'     => $this->appSetup,
             'locales'   => $this->locales,
@@ -198,6 +205,8 @@ class AuthController extends BaseController {
 
         return $this->view->render($response, '/auth/lock-system.twig', [
 
+            'pageTitle' => $this->translator->get('auth.uls.page_title'),
+
             'setup'     => $this->appSetup,
             'locales'   => $this->locales,
         ]);
@@ -255,6 +264,8 @@ class AuthController extends BaseController {
     public function getActivation(Response $response): Response {
 
         return $this->view->render($response, '/auth/activation.twig', [
+
+            'pageTitle' => $this->translator->get('auth.uac.page_title'),
 
             'setup'     => $this->appSetup,
             'locales'   => $this->locales,
@@ -402,6 +413,8 @@ class AuthController extends BaseController {
         $userSocial = UserSocial::with([])->where('link_uid', '=', $uid)->first();
 
         return $this->view->render($response, '/auth/link-accounts.twig', [
+
+            'pageTitle' => $this->translator->get('auth.ula.page_title'),
 
             'setup'     => $this->appSetup,
             'locales'   => $this->locales,

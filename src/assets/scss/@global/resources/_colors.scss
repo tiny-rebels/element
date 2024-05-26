@@ -58,9 +58,6 @@ $colors: (
 ) !default;
 // scss-docs-end colors-map
 
-$nexus:         #42E695 !default;
-$sunset-malibu: #fd5581 !default;
-$deep-sea:      #4CA1AF !default;
 $primary:       #cb0c9f !default;
 $secondary:     #8392AB !default;
 $info:          #17c1e8 !default;
@@ -70,12 +67,13 @@ $danger:        #ea0606 !default;
 $light:         $gray-200 !default;
 $dark:          $h-color !default;
 $darkGrey:      #444 !default;
+$nexus:         #42E695 !default;
+$sunset-malibu: #fd5581 !default;
+$deep-sea:      #4CA1AF !default;
+// continue to add your own here...
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-    "nexus":          $nexus,
-    "sunset-malibu":  $sunset-malibu,
-    "deep-sea":       $deep-sea,
     "primary":        $primary,
     "secondary":      $secondary,
     "success":        $success,
@@ -84,21 +82,16 @@ $theme-colors: (
     "danger":         $danger,
     "light":          $light,
     "dark":           $dark,
-    "white":          $white
+    "white":          $white,
+    "nexus":          $nexus,
+    "sunset-malibu":  $sunset-malibu,
+    "deep-sea":       $deep-sea,
+    // continue to add your own here...
 ) !default;
 // scss-docs-end theme-colors-map
 
 
 // Gradient colors
-$nexus-gradient:                #42E695 !default;
-$nexus-gradient-state:          #a8ff78 !default;
-
-$sunset-malibu-gradient:        #fd5581 !default;
-$sunset-malibu-gradient-state:  #fd8b55 !default;
-
-$deep-sea-gradient:             #2C3E50 !default;
-$deep-sea-gradient-state:       #4CA1AF !default;
-
 $primary-gradient:              #7928CA !default;
 $primary-gradient-state:        #FF0080 !default;
 
@@ -126,19 +119,31 @@ $light-gradient-state:          #EBEFF4 !default;
 $dark-gradient-dark:            #323a54 !default;
 $dark-gradient-state-dark:      #1a2035 !default;
 
+$nexus-gradient:                #42E695 !default;
+$nexus-gradient-state:          #a8ff78 !default;
+
+$sunset-malibu-gradient:        #fd5581 !default;
+$sunset-malibu-gradient-state:  #fd8b55 !default;
+
+$deep-sea-gradient:             #2C3E50 !default;
+$deep-sea-gradient-state:       #4CA1AF !default;
+// continue to add your own here...
+
+
 // Gradient Colors map
 $theme-gradient-colors: (
-        "nexus":          ($nexus-gradient, $nexus-gradient-state),
-        "sunset-malibu":  ($sunset-malibu-gradient, $sunset-malibu-gradient-state),
-        "deep-sea":       ($deep-sea-gradient, $deep-sea-gradient-state),
-        "primary":        ($primary-gradient, $primary-gradient-state),
-        "secondary":      ($secondary-gradient, $secondary-gradient-state),
-        "success":        ($success-gradient, $success-gradient-state),
-        "info":           ($info-gradient, $info-gradient-state),
-        "warning":        ($warning-gradient, $warning-gradient-state),
-        "danger":         ($danger-gradient, $danger-gradient-state),
-        "light":          ($light-gradient, $light-gradient-state),
-        "dark":           ($dark-gradient, $dark-gradient-state)
+    "primary":        ($primary-gradient, $primary-gradient-state),
+    "secondary":      ($secondary-gradient, $secondary-gradient-state),
+    "success":        ($success-gradient, $success-gradient-state),
+    "info":           ($info-gradient, $info-gradient-state),
+    "warning":        ($warning-gradient, $warning-gradient-state),
+    "danger":         ($danger-gradient, $danger-gradient-state),
+    "light":          ($light-gradient, $light-gradient-state),
+    "dark":           ($dark-gradient, $dark-gradient-state),
+    "nexus":          ($nexus-gradient, $nexus-gradient-state),
+    "sunset-malibu":  ($sunset-malibu-gradient, $sunset-malibu-gradient-state),
+    "deep-sea":       ($deep-sea-gradient, $deep-sea-gradient-state),
+    // continue to add your own here...
 ) !default;
 
 // Set a specific jump point for requesting color jumps

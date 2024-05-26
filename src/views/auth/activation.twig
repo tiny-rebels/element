@@ -16,17 +16,16 @@
                         <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
 
                             <div class="card card-plain">
-                                <div class="card-body px-lg-5 py-lg-5 text-center">
-                                    <div class="text-center text-muted mb-4">
-                                        <h2>
-                                            {{ credentials }}
-                                        </h2>
-                                    </div>
-                                    <div class="text-center text-muted mb-4">
-                                        <h2>
-                                            {{ trans('auth.uac.call_to_action') }}
-                                        </h2>
-                                    </div>
+                                <div class="card-header pb-0 text-center no-background">
+                                    <h3 class="text-{{ setup.app_color }} text-gradient">
+                                        Få adgang til alt det fede
+{#                                        {{ trans('auth.uac.call_to_action') }}#}
+                                    </h3>
+                                    <p class="mb-0">
+                                        Du finder din token i din mail indbakke 😊👌
+                                    </p>
+                                </div>
+                                <div class="card-body px-lg-5 py-lg-3 text-center">
                                     <form id="activate-user" action="{{ path_for('auth.activate-user') }}" method="post">
                                         <div class="row token-inputs gx-2 gx-sm-3">
                                             <div class="col">

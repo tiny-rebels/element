@@ -16,7 +16,7 @@
 
     <!-- Page Title -->
     <title>
-        {% block title %}default title{% endblock %}
+        {% if pageTitle %}{{ pageTitle }}{% else %}Element3{% endif %}
     </title>
 
     <!-- Font Awesome Icons -->
@@ -26,31 +26,31 @@
 
     <!-- Pace.js styles -->
     {% if setup.app_color is same as("primary") %}
-        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-primary.min.css">
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace/pace-theme-primary.min.css">
 
     {% elseif setup.app_color is same as("info") %}
-        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-info.min.css">
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace/pace-theme-info.min.css">
 
     {% elseif setup.app_color is same as("success") %}
-        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-success.min.css">
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace/pace-theme-success.min.css">
 
     {% elseif setup.app_color is same as("warning") %}
-        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-warning.min.css">
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace/pace-theme-warning.min.css">
 
     {% elseif setup.app_color is same as("danger") %}
-        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-danger.min.css">
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace/pace-theme-danger.min.css">
 
     {% elseif setup.app_color is same as("nexus") %}
-        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-nexus.min.css">
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace/pace-theme-nexus.min.css">
 
     {% elseif setup.app_color is same as("sunset-malibu") %}
-        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-sunset-malibu.min.css">
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace/pace-theme-sunset-malibu.min.css">
 
     {% elseif setup.app_color is same as("deep-sea") %}
-        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-deep-sea.min.css">
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace/pace-theme-deep-sea.min.css">
 
     {% else %}
-        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace-theme-dark.min.css">
+        <link rel="stylesheet" href="{{ base_url() }}/public/css/plugins/pace/pace-theme-dark.min.css">
 
     {% endif %}
 
