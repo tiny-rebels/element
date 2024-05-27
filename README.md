@@ -26,9 +26,11 @@ $ composer create-project element/nexus <NAME>
 
 Whats the foss all about?
 ===
-Element is designed to be very simple and straightforward to use. It's kind of similar to Laravel, but with a structure and context that suitet my needs and
-taste in a better way!... While the public views are more or less up to the developer it self, I decided to use [adminLTE 2.4.18](https://adminlte.io/themes/AdminLTE/index.html) for the backend dashboard, simply because it's really easy to use! It has lots of cool ui elements
-and the best part of it?! It's 100% free - Even for commercial apps :-) So you are good there... But feel free to switch to your own template if you like. (I left the theme as a .zip folder under 'src/assets/themes')
+Element is designed to be very simple and straightforward to use. It's kind of similar to Laravel, but with a structure and context that suited my needs and
+taste in a better way!... While the public views are more or less up to the developer itself, I decided to use the free version of [Soft UI Dashboard from creative tim](https://www.creative-tim.com/product/soft-ui-dashboard) for the backend dashboard, simply because it's really easy to use! It has lots of cool ui elements
+and the best part of it?! It's 100% free - Even for commercial apps 😊 So you are good there 👌... Although it comes with an MIT license, so please bear that in mind whenever you make any changes to the code.
+
+**But I highly recommend** any users of Element3 to check out their [Pro version](https://www.creative-tim.com/product/soft-ui-dashboard-pro) 👀📢 It's really cool, and it comes with a lot of extra cool features... Or else feel free to switch to your own template if you like. (I left the theme as a .zip folder under 'src/assets/themes')
 
 :speech_balloon: Usage
 ===
