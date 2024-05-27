@@ -14,7 +14,7 @@ Element is designed to be very simple and straightforward to use.
 ===
 Element requires PHP 7.1+.
 
-> **IMPORTANT:** If you want to use YAML files or strings, require the [Symfony Yaml component](https://github.com/symfony/Yaml) in your `composer.json`.
+> **IMPORTANT:** If you want to use YAML files or strings, then you need to require in the [Symfony Yaml component](https://packagist.org/packages/symfony/yaml#v5.4.39) in your `composer.json`.
 
 :zap: Installation
 ===
@@ -89,8 +89,8 @@ Element was inspired and put together from these courses over at [codecourse.com
 ===
 The MIT License (MIT). Please see the [license file](LICENSE.md) for more information.
 
-[ico-php]: https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=for-the-badge
-[ico-version]: https://img.shields.io/packagist/v/element/app.svg?style=for-the-badge
+[ico-php]: https://img.shields.io/badge/php-7.4-8892BF.svg?style=for-the-badge
+[ico-version]: https://img.shields.io/packagist/v/element/nexus.svg?style=for-the-badge
 [ico-ci]: https://img.shields.io/gitlab/pipeline/skf83/app/develop?style=for-the-badge
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge
 [ico-downloads]: https://img.shields.io/packagist/dt/element/app.svg?style=for-the-badge

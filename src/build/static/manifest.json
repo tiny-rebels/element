@@ -1,7 +1,7 @@
 {
-    "name": "nexus | tune trafikskole",
+    "name": "element3 | nexus",
     "short_name": "nexus",
-    "description": "CRM system for tune trafikskole",
+    "description": "CRM system from Element",
     "start_url": "/",
     "theme_color": "#f8f9fa",
     "background_color": "#f8f9fa",
