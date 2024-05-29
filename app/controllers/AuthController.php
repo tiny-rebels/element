@@ -192,8 +192,8 @@ class AuthController extends BaseController {
 
         }
 
-        // redirect back to home view
-        return $response->withRedirect($this->router->pathFor('home'));
+        // redirect back to sign-in view
+        return $response->withRedirect($this->router->pathFor('auth.sign-in'));
     }
 
     /**

@@ -51,6 +51,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.5/perfect-scrollbar.min.js" integrity="sha512-X41/A5OSxoi5uqtS6Krhqz8QyyD8E/ZbN7B4IaBSgqPLRbWVuXJXr9UwOujstj71SoVxh5vxgy7kmtd17xrJRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- smooth-scroll -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.4/smooth-scrollbar.min.js" integrity="sha512-UOuvdHxPTS8D5IoOYOwLGAN05jYYXKhxFOZDe/24o53eOOf9ylws0uPfV+gRj/k1z17C0KtC7Vkt+5H7BLQxOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- Choices.js -->
+        <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js" integrity="sha256-P+JgcxEeZtxwYS1+TAAuusKFM646SB8Oodk0TYu9zuo=" crossorigin="anonymous"></script>
+        <!-- Datatables.js -->
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@3.0.2/dist/umd/simple-datatables.min.js"></script>
         <!-- Pace -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha512-2cbsQGdowNDPcKuoBd2bCcsJky87Mv0LEtD/nunJUgk6MOYTgVMGihS/xCEghNf04DPhNiJ4DZw5BxDd1uyOdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -58,21 +62,28 @@
         <script src="{{ base_url() }}/public/js/back/app.min.js"></script>
 
         <!-- keymap -->
-        <script src="{{ base_url() }}/public/js/back/keymap.min.js"></script>
+        <script src="{{ base_url() }}/public/js/back/key-map.min.js"></script>
+
+        <!-- Auto-lock -->
+{#        <script src="{{ base_url() }}/public/js/back/auto-lock.min.js"></script>#}
 
         <!-- Vue.js -->
         <script src="{{ base_url() }}/public/js/vue/main.min.js"></script>
 
-        <!-- Local script(s) -->
-{#        <script>#}
-{#            var win = navigator.platform.indexOf('Win') > -1;#}
-{#            if (win && document.querySelector('#sidenav-scrollbar')) {#}
-{#                var options = {#}
-{#                    damping: '0.5'#}
-{#                }#}
-{#                Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);#}
-{#            }#}
-{#        </script>#}
+        <!--------------------------
+        |   Local script(s)        |
+        -------------------------->
+
+        <!-- Perfect-scrollbar -->
+        <script>
+            var win = navigator.platform.indexOf('Win') > -1;
+            if (win && document.querySelector('#sidenav-scrollbar')) {
+                var options = {
+                    damping: '0.5'
+                }
+                Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+            }
+        </script>
 
         <!-- Page load -->
         <script>
@@ -81,6 +92,34 @@
 
         <!-- extending inline scripts -->
         {% block scripts %}{% endblock %}
+
+{#        <script>#}
+
+{#            const canWakeLock = () => 'wakeLock' in navigator;#}
+
+{#            let wakelock;#}
+{#            async function lockWakeState() {#}
+
+{#                if(!canWakeLock()) return;#}
+
+{#                try {#}
+
+{#                    wakelock = await navigator.wakeLock.request();#}
+{#                    #}
+{#                    wakelock.addEventListener('release', () => {#}
+
+{#                        console.log('Screen Wake State Locked:', !wakelock.released);#}
+{#                    });#}
+
+{#                    console.log('Screen Wake State Locked:', !wakelock.released);#}
+
+{#                } catch(error) {#}
+
+{#                    console.error('Failed to lock wake state with reason:', error.message);#}
+{#                }#}
+{#            }#}
+
+{#        </script>#}
 
     </body>
 

@@ -29,7 +29,9 @@ module.exports = {
 
         'back/app'                      : 'js/back/app.js',
         'back/app-demo'                 : 'js/back/app-demo.js',
-        'back/keymap'                   : 'js/back/keymap.js',
+        'back/auto-lock'                : 'js/back/auto-lock.js',
+        'back/key-map'                  : 'js/back/key-map.js',
+        'back/plugins/datatables'       : 'js/back/plugins/datatables.js',
 
         'vendors/choices'               : 'js/vendors/choices.js',
         'vendors/dropzone'              : 'js/vendors/dropzone.js',
@@ -154,7 +156,8 @@ module.exports = {
         new WebpackNotifierPlugin({
 
             emoji: true,
-            appName: "Element",
+            appName: "Element3",
+            appID: 'Element3',
             sound: true,
             contentImage: path.join(__dirname, './static/icons/icon_512.png'),
             title: 'Elements collected',

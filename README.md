@@ -3,6 +3,7 @@
 </p>
 
 [![Minimum PHP Version][ico-php]][link-php]
+[![Vue version][ico-vue]][link-vue]
 [![Latest version][ico-version]][link-packagist]
 [![Build Status][ico-ci]][link-ci]
 [![Software License][ico-license]][link-license]
@@ -91,14 +92,16 @@ Element was inspired and put together from these courses over at [codecourse.com
 ===
 The MIT License (MIT). Please see the [license file](LICENSE.md) for more information.
 
-[ico-php]: https://img.shields.io/badge/php-7.4-8892BF.svg?style=for-the-badge
-[ico-version]: https://img.shields.io/packagist/v/element/nexus.svg?style=for-the-badge
-[ico-ci]: https://img.shields.io/gitlab/pipeline/skf83/app/develop?style=for-the-badge
+[ico-php]: https://img.shields.io/badge/php-7.4-8892BF.svg?style=for-the-badge&logo=php
+[ico-vue]: https://img.shields.io/badge/vue.js-3-4FC08D.svg?style=for-the-badge&logo=vuedotjs
+[ico-version]: https://img.shields.io/packagist/v/element/nexus.svg?style=for-the-badge&logo=packagist
+[ico-ci]: https://img.shields.io/gitlab/pipeline/skf83/app/develop?style=for-the-badge&logo=webpack
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge
 [ico-downloads]: https://img.shields.io/packagist/dt/element/app.svg?style=for-the-badge
 
 [link-php]: https://php.net/
-[link-packagist]: https://packagist.org/packages/element/app
+[link-vue]: https://vuejs.org/
+[link-packagist]: https://packagist.org/packages/element/nexus
 [link-ci]: https://gitlab.com/skf83/app/commits/develop
 [link-license]: https://opensource.org/licenses/MIT
-[link-downloads]: https://packagist.org/packages/element/app
+[link-downloads]: https://packagist.org/packages/element/nexus

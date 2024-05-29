@@ -14,6 +14,7 @@ import 'icons/brands/ic_brand_google.svg'
 import 'icons/brands/ic_brand_instagram.svg'
 import 'icons/brands/ic_brand_linkedin.svg'
 import 'icons/brands/ic_brand_microsoft.svg'
+import 'icons/brands/ic_brand_slack.svg'
 import 'icons/brands/ic_brand_spotify.svg'
 import 'icons/brands/ic_brand_swagger.svg'
 import 'icons/brands/ic_brand_tiktok.svg'
@@ -109,28 +110,27 @@ import 'images/placeholders/img_placeholder_1920x1080.svg'
 
 "use strict";
 (function() {
-    var isWindows = navigator.platform.indexOf('Win') > -1;
+
+    const isWindows = navigator.platform.indexOf('Win') > -1;
 
     if (isWindows) {
-        // if we are on windows OS we activate the perfectScrollbar function
+        // if we are on Windows OS we activate the perfectScrollbar function
         if (document.getElementsByClassName('main-content')[0]) {
-            var mainpanel = document.querySelector('.main-content');
-            var ps = new PerfectScrollbar(mainpanel);
+
+            const mainpanel = document.querySelector('.main-content');
+            const ps = new PerfectScrollbar(mainpanel);
         }
 
         if (document.getElementsByClassName('sidenav')[0]) {
-            var sidebar = document.querySelector('.sidenav');
-            var ps1 = new PerfectScrollbar(sidebar);
-        }
 
-        if (document.getElementsByClassName('navbar-collapse')[0]) {
-            var fixedplugin = document.querySelector('.navbar:not(.navbar-expand-lg) .navbar-collapse');
-            var ps2 = new PerfectScrollbar(fixedplugin);
+            const sidebar = document.querySelector('.sidenav');
+            const ps1 = new PerfectScrollbar(sidebar);
         }
 
         if (document.getElementsByClassName('fixed-plugin')[0]) {
-            var fixedplugin = document.querySelector('.fixed-plugin');
-            var ps3 = new PerfectScrollbar(fixedplugin);
+
+            const fixedplugin = document.querySelector('.fixed-plugin');
+            const ps3 = new PerfectScrollbar(fixedplugin);
         }
     }
 })();
@@ -140,8 +140,8 @@ navbarBlurOnScroll('navbarBlur');
 
 
 // initialization of Tooltips
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 

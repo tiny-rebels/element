@@ -24,8 +24,9 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/tables.html">
-                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                <a data-bs-toggle="collapse" href="#tableExamples" class="nav-link {% if current_path() == "/endpoint/overview" or current_path() == "/endpoint/overview" %}active{% endif %}"
+                   aria-controls="dashboardsExamples" role="button" aria-expanded="false">
+                    <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center d-flex align-items-center justify-content-center  me-2">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>office</title>
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -40,12 +41,38 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Tables</span>
+                    <span class="nav-link-text ms-1">
+                        Tables
+                    </span>
                 </a>
+                <div class="collapse show" id="tableExamples">
+                    <ul class="nav ms-4 ps-3">
+{#                        <li class="nav-item {% if current_path() == "/dashboard" %}active{% endif %}">#}
+                        <li class="nav-item {% if current_path() == "/dashboard" %}active{% endif %}">
+{#                            <a class="nav-link {% if current_path() == "/dashboard" %}active{% endif %}" href="{{ path_for('dashboard') }}">#}
+                            <a class="nav-link" href="#">
+                                <span class="sidenav-mini-icon"> B </span>
+                                <span class="sidenav-normal">
+                                    Brugere
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item {% if current_path() == "/endpoint/overview" %}active{% endif %}">
+                            <a class="nav-link {% if current_path() == "/endpoint/overview" %}active{% endif %}" href="{{ path_for('endpoint.overview') }}">
+                                <span class="sidenav-mini-icon"> E </span>
+                                <span class="sidenav-normal">
+                                    Endpoints
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
 
+
+
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/billing.html">
+                <a class="nav-link" href="#">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>credit-card</title>
@@ -66,7 +93,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/virtual-reality.html">
+                <a class="nav-link" href="#">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>box-3d-50</title>
@@ -88,7 +115,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/rtl.html">
+                <a class="nav-link" href="#">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>settings</title>
