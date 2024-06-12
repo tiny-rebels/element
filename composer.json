@@ -18,21 +18,11 @@
         },
         "sort-packages": true
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "K:\\Git\\Element\\packages\\element-jwt-auth",
-            "options": {
-                "symlink": false
-            }
-        }
-    ],
     "require": {
         "ext-json": "*",
         "ext-pdo": "*",
         "cartalyst/sentinel": "^5.0",
         "dragonmantank/cron-expression": "^3.3",
-        "element/jwt-auth": "dev-development",
         "element/social": "^3.0",
         "element/unique": "^3.0",
         "firebase/php-jwt": "^6.10",
@@ -97,6 +87,7 @@
             "php -r \"file_exists('config/app/development/element.yaml') || copy('config/app/_examples/element.yaml', 'config/app/development/element.yaml');\"",
             "php -r \"file_exists('config/app/development/locale.yaml') || copy('config/app/_examples/locale.yaml', 'config/app/development/locale.yaml');\"",
             "php -r \"file_exists('config/app/development/services.yaml') || copy('config/app/_examples/services.yaml', 'config/app/development/services.yaml');\"",
+            "php -r \"file_exists('config/app/development/social.yaml') || copy('config/app/_examples/social.yaml', 'config/app/development/social.yaml');\"",
 
             "php -r \"file_exists('config/app/production/app.yaml') || copy('config/app/_examples/app.yaml', 'config/app/production/app.yaml');\"",
             "php -r \"file_exists('config/app/production/auth.yaml') || copy('config/app/_examples/auth.yaml', 'config/app/production/auth.yaml');\"",
@@ -105,6 +96,7 @@
             "php -r \"file_exists('config/app/production/element.yaml') || copy('config/app/_examples/element.yaml', 'config/app/production/element.yaml');\"",
             "php -r \"file_exists('config/app/production/locale.yaml') || copy('config/app/_examples/locale.yaml', 'config/app/production/locale.yaml');\"",
             "php -r \"file_exists('config/app/production/services.yaml') || copy('config/app/_examples/services.yaml', 'config/app/production/services.yaml');\"",
+            "php -r \"file_exists('config/app/production/social.yaml') || copy('config/app/_examples/social.yaml', 'config/app/production/social.yaml');\"",
 
             "php -r \"file_exists('phpunit.xml') || copy('app/console/commands/tests/phpunit/schema/phpunit.example.xml', 'phpunit.xml');\""
         ]
