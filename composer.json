@@ -32,7 +32,6 @@
         "ext-pdo": "*",
         "cartalyst/sentinel": "^5.0",
         "dragonmantank/cron-expression": "^3.3",
-        "element/jwt-auth": "dev-development",
         "element/social": "^3.0",
         "element/unique": "^3.0",
         "firebase/php-jwt": "^6.10",

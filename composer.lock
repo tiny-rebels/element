@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6606953402d8f17b7a5734411f00f31",
+    "content-hash": "bdbbc74fadf0e39d00f21b8341b00cc3",
     "packages": [
         {
             "name": "brick/math",
@@ -959,66 +959,6 @@
                 }
             ],
             "time": "2023-06-01T07:04:22+00:00"
-        },
-        {
-            "name": "element/jwt-auth",
-            "version": "dev-development",
-            "dist": {
-                "type": "path",
-                "url": "K:/Git/Element/packages/element-jwt-auth",
-                "reference": "2018deee99807d149ea282730f948f9367e72ae7"
-            },
-            "require": {
-                "illuminate/database": "^8.83",
-                "symfony/var-dumper": "^5.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Element\\JwtAuth\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Element\\JwtAuth\\Tests\\": "tests/"
-                }
-            },
-            "license": [
-                "mit"
-            ],
-            "authors": [
-                {
-                    "name": "Stefan Korfitz",
-                    "email": "stefan@korfitz.com"
-                }
-            ],
-            "description": "JWT authentication package for Element",
-            "keywords": [
-                "Bootstrap3",
-                "Composer",
-                "JS",
-                "MVC",
-                "NPM",
-                "PHP-7",
-                "SCSS",
-                "Tiny-Rebels",
-                "Twig",
-                "Vue3",
-                "Webpack",
-                "element",
-                "framework",
-                "slim3"
-            ],
-            "support": {
-                "email": "stefan@korfitz.com"
-            },
-            "transport-options": {
-                "symlink": false,
-                "relative": false
-            }
         },
         {
             "name": "element/social",
@@ -8310,9 +8250,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "element/jwt-auth": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
