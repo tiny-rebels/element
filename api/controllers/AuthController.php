@@ -17,7 +17,7 @@ class AuthController extends BaseController {
      * @param Request $request
      * @param Response $response
      *
-     * @return Response|void
+     * @return mixed
      */
     public function fetchToken(Request $request, Response $response) {
 

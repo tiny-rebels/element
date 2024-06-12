@@ -1,6 +1,7 @@
 <?php global $app;
 
 use app\handlers\auth\jwt\JwtAuth;
+
 use app\middleware\security\api\{JwtAuthenticateMiddleware};
 
 /**

@@ -32,6 +32,7 @@ class UserSocial extends Model {
         'email',
         'photo',
         'link_uid',
+        'show_on_website'
     ];
 
     /**

@@ -4,7 +4,7 @@ namespace app\models\data;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Activation extends Model {
+class UserActivation extends Model {
 
     /**
      * Making sure, that our model-class is

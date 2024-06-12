@@ -10,7 +10,8 @@ use app\handlers\{
 
 use app\models\{
     data\Locale,
-    data\Setup
+    data\Setup,
+    data\User
 };
 
 use Illuminate\Translation\Translator;
@@ -40,6 +41,7 @@ class BaseController {
     protected Mailer $mailer;
     protected Router $router;
     protected Translator $translator;
+    protected User $user;
     protected Twig $view;
     protected ValidatorInterface $validator;
 
@@ -50,12 +52,13 @@ class BaseController {
      * @param ContainerInterface $container
      * @param Flash $flash
      * @param Mailer $mailer
-     * @param Translator $translator
      * @param Router $router
-     * @param Twig $view
+     * @param Translator $translator
+     * @param User $user
      * @param ValidatorInterface $validator
+     * @param Twig $view
      */
-    public function __construct(Config $config, ContainerInterface $container, Flash $flash, Mailer $mailer, Router $router, Translator $translator, ValidatorInterface $validator, Twig $view) {
+    public function __construct(Config $config, ContainerInterface $container, Flash $flash, Mailer $mailer, Router $router, Translator $translator, User $user, ValidatorInterface $validator, Twig $view) {
 
         /*
          * NOTE!
@@ -73,6 +76,7 @@ class BaseController {
         $this->mailer       = $mailer;
         $this->router       = $router;
         $this->translator   = $translator;
+        $this->user         = $user;
         $this->validator    = $validator;
         $this->view         = $view;
     }

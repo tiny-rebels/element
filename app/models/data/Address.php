@@ -4,13 +4,13 @@ namespace app\models\data;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Throttle extends Model {
+class Address extends Model {
 
     /**
      * Making sure, that our model-class is
      * referring to the correct table !?
      */
-    protected $table = 'throttle';
+    protected $table = 'addresses';
 
     /**
      * Specifying which columns, we want to write to...
@@ -19,9 +19,12 @@ class Throttle extends Model {
      */
     protected $fillable = [
 
-        'user_id',
-        'type',
-        'ip'
+        'address1',
+        'address2',
+        'zip',
+        'city',
+        'country_code',
+        'country'
     ];
 
     /**
@@ -31,8 +34,6 @@ class Throttle extends Model {
      */
     protected $hidden = [
 
-        //'id',
-        'created_at',
         'updated_at'
     ];
 }

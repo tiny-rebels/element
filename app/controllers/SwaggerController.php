@@ -15,7 +15,7 @@ class SwaggerController extends BaseController {
 
         return $this->view->render($response, '/api/v1/swagger-ui.twig', [
 
-            // ...
+            'pageTitle'     => "Element API Version 1",
         ]);
     }
 }

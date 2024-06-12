@@ -25,6 +25,8 @@ class EndpointController extends BaseController {
 
         return $this->view->render($response, '/dashboard/endpoint-overview.twig', [
 
+            'pageTitle'     => "Endpoints",
+
             'setup'     => $this->appSetup,
             'locales'   => $this->locales,
 

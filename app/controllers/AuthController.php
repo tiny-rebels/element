@@ -2,10 +2,7 @@
 
 namespace app\controllers;
 
-use app\models\data\{
-    User,
-    UserSocial
-};
+use app\models\data\{User, UserAddress, UserSocial, UserTelephone};
 
 use app\models\mail\auth\Welcome;
 
@@ -154,7 +151,7 @@ class AuthController extends BaseController {
         try {
 
             // Register a new user
-            Sentinel::register([
+            $userWasCreated = Sentinel::register([
 
                 'first_name'        => $request->getParam('first_name'),
                 'last_name'         => $request->getParam('last_name'),
@@ -163,6 +160,29 @@ class AuthController extends BaseController {
                 'activation_token'  => Generate::otp(),
 
             ]);
+
+            // Proceed only if above was successful...
+            if ($userWasCreated) {
+
+                // Create the "telephone" relation
+                UserTelephone::with([])->create([
+
+                    'user_id'       => $userWasCreated->id,
+                ]);
+
+                // Create the 2 "address" relations
+                UserAddress::with([])->create([
+
+                    'user_id'       => $userWasCreated->id,
+                    'address_type'  => 'home',
+                ]);
+
+                UserAddress::with([])->create([
+
+                    'user_id'       => $userWasCreated->id,
+                    'address_type'  => 'billing',
+                ]);
+            }
 
         } catch (\Exception $error) {
 

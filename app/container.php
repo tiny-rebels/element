@@ -1,6 +1,7 @@
 <?php
 
 use app\handlers\{
+    app\AppDetails,
     errors\NotFoundHandler,
     mailer\Mailer
 };
@@ -244,13 +245,17 @@ return [
         /* GLOBALS */
         $twig->getEnvironment()->addGlobal('session', $_SESSION);
 
+        $twig->getEnvironment()->addGlobal('app_version', $container->get(AppDetails::class)->getVersion());
+
+        $twig->getEnvironment()->addGlobal('php_version', $container->get(AppDetails::class)->getPHPVersion());
+
         $twig->getEnvironment()->addGlobal('current_path', $container->get('request')->getUri());
 
         $twig->getEnvironment()->addGlobal('flash', $container->get(Messages::class));
 
         $twig->getEnvironment()->addGlobal('auth', [
 
-            'user' => Sentinel::check(),
+            'user' => Sentinel::check()
         ]);
 
         return $twig;

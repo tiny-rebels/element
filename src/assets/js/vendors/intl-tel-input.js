@@ -19,7 +19,7 @@ $(document).ready(function () {
             });
         },
 
-        hiddenInput: "full_number",
+        hiddenInput: "mobile_phone_full",
 
         initialCountry: "auto",
 

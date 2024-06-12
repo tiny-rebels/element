@@ -2,15 +2,15 @@
 
 namespace app\models\data;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\{Model};
 
-class Persistency extends Model {
+class Role extends Model {
 
     /**
      * Making sure, that our model-class is
      * referring to the correct table !?
      */
-    protected $table = 'persistences';
+    protected $table = 'roles';
 
     /**
      * Specifying which columns, we want to write to...
@@ -19,8 +19,9 @@ class Persistency extends Model {
      */
     protected $fillable = [
 
-        'user_id',
-        'code'
+        'slug',
+        'name',
+        'permissions'
     ];
 
     /**
@@ -30,8 +31,6 @@ class Persistency extends Model {
      */
     protected $hidden = [
 
-        //'id',
-        'created_at',
-        'updated_at'
+        //
     ];
 }

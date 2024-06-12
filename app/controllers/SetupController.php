@@ -39,7 +39,6 @@ class SetupController extends BaseController {
         ]);
 
         return $response->withStatus(302)->withHeader('Location', $_SESSION['currentRoute']);
-        //return $response->withRedirect($this->router->pathFor('dashboard.overview')); // TODO : Should be replaced with last url
     }
 
     /**
@@ -66,6 +65,5 @@ class SetupController extends BaseController {
         }
 
         return $response->withStatus(302)->withHeader('Location', $_SESSION['currentRoute']);
-        //return $response->withRedirect($this->router->pathFor('dashboard.overview')); // TODO : Should be replaced with last url
     }
 }

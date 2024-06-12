@@ -29,8 +29,10 @@ class User extends Model implements JwtSubject {
         'img_cover',
         'img_avatar',
         'first_name',
+        'middle_names',
         'last_name',
-        'last_login'
+        'last_login',
+        'activation_token'
     ];
 
     /**
@@ -44,6 +46,19 @@ class User extends Model implements JwtSubject {
     ];
 
     /**
+     * update -> Password
+     *
+     * @param $password
+     */
+    public function updatePassword($password) : void {
+
+        $this->update([
+
+            'password' => password_hash($password, PASSWORD_DEFAULT)
+        ]);
+    }
+
+    /**
      * @return int
      */
     public function getJwtIdentifier() : int {
@@ -52,10 +67,34 @@ class User extends Model implements JwtSubject {
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function addresses() {
+
+        return $this->belongsToMany(Address::class, 'users_addresses')->withPivot('user_id', 'address_id', 'address_type');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function telephone() {
+
+        return $this->hasOne(UserTelephone::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function sso() {
 
         return $this->hasMany(UserSocial::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\belongsToMany
+     */
+    public function roles() {
+
+        return $this->belongsToMany(Role::class, 'role_users');
     }
 }

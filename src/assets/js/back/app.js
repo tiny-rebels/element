@@ -55,10 +55,18 @@ import 'icons/flag/ic_flag_PT.svg'
 import 'icons/flag/ic_flag_SE.svg'
 import 'icons/flag/ic_flag_TR.svg'
 /* general */
+import 'icons/ic_box_3d.svg'
+import 'icons/ic_creditcard.svg'
+import 'icons/ic_customer_support.svg'
+import 'icons/ic_document.svg'
 import 'icons/ic_down_arrow.svg'
 import 'icons/ic_down_arrow_dark.svg'
 import 'icons/ic_down_arrow_white.svg'
 import 'icons/ic_merge.svg'
+import 'icons/ic_office.svg'
+import 'icons/ic_settings.svg'
+import 'icons/ic_shop.svg'
+import 'icons/ic_spaceship.svg'
 import 'icons/ic_user_avatar.svg'
 
 /**

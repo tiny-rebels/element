@@ -40,9 +40,41 @@ try {
 $app->group('/user', function () use($app) {
 
     /**
-     * rendering view : USER -> PROFILE
+     * INNER Group : USER -> PROFILE
      */
-    $app->get('/profile', ['app\controllers\UserController', 'getUserProfile'])->setName('user.profile');
+    $app->group('/profile', function () use($app) {
+
+        /**
+         * rendering view : USER -> PROFILE -> ME
+         */
+        $app->get('/me', ['app\controllers\UserController', 'getUserProfile'])->setName('user.profile');
+
+        /**
+         * method : USER -> UPDATE -> BASIC INFO
+         */
+        $app->post('/{id}/update/basic-info', ['app\controllers\UserController', 'updateBasicInfo'])->setName('user.update.basic-info');
+
+        /**
+         * method : USER -> UPDATE -> ADDRESS
+         */
+        $app->post('/{id}/update/address', ['app\controllers\UserController', 'updateAddress'])->setName('user.update.address');
+
+        /**
+         * method : USER -> UPDATE -> PASSWORD
+         */
+        $app->post('/{id}/update/password', ['app\controllers\UserController', 'updatePassword'])->setName('user.update.password');
+
+        /**
+         * method : USER -> TOGGLE -> SOCIAL SERVICE BEING SHOWN ONLINE
+         */
+        $app->post('/{id}/toggle/show-social/{service}', ['app\controllers\UserController', 'toggleSocialServiceBeingShown'])->setName('user.toggle.show-social-service');
+
+        /**
+         * method : USER -> DELETE -> SOCIAL SERVICE
+         */
+        $app->post('/{id}/delete/social-service/{service}', ['app\controllers\UserController', 'deleteSocialService'])->setName('user.delete.social-service');
+
+    });
 
 })
     ->add(new AuthMiddleware($router))

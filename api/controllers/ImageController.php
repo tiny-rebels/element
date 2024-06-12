@@ -35,7 +35,7 @@ class ImageController extends BaseController {
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
      */
-    public function store(Request $request, Response $response): Response {
+    public function store(Request $request, Response $response) : Response {
 
         /**
          * Validating -> Uploaded file is not empty!

@@ -9,6 +9,9 @@
                 <div class="col-auto">
                     <div class="avatar avatar-xl position-relative">
                         <img src="{{ auth.user.img_avatar }}" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+                        <a href="javascript:;" class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2">
+                            <i class="fa fa-pen top-0" data-bs-toggle="tooltip" data-bs-placement="top" title="" aria-hidden="true" data-bs-original-title="Edit Image" aria-label="Edit Image"></i><span class="sr-only">Edit Image</span>
+                        </a>
                     </div>
                 </div>
                 <div class="col-auto my-auto">
@@ -24,8 +27,8 @@
                 <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
                     <div class="nav-wrapper position-relative end-0">
                         <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
+                            <!-- tab : user-profile-main (_up) -->
                             <li class="nav-item">
-                                <!-- tab : user-profile-main (_up) -->
                                 <a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true">
                                     <svg class="text-dark" width="16px" height="16px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -44,8 +47,8 @@
                                     <span class="ms-1">Main</span>
                                 </a>
                             </li>
+                            <!-- tab : user-profile-messages (_up) -->
                             <li class="nav-item">
-                                <!-- tab : user-profile-messages (_up) -->
                                 <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">
                                     <svg class="text-dark" width="16px" height="16px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <title>document</title>
@@ -64,8 +67,8 @@
                                     <span class="ms-1">Messages</span>
                                 </a>
                             </li>
+                            <!-- tab : user-profile-settings (_up) -->
                             <li class="nav-item">
-                                <!-- tab : user-profile-settings (_up) -->
                                 <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">
                                     <svg class="text-dark" width="16px" height="16px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <title>settings</title>
@@ -123,5 +126,15 @@
         {% include '/dashboard/_partials/footer.twig' %}
 
     </div>
+
+{% endblock %}
+
+{% block scripts %}
+
+    <!-- Flatpickr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.6/flatpickr.min.js" integrity="sha512-Nc36QpQAS2BOjt0g/CqfIi54O6+UWTI3fmqJsnXoU6rNYRq8vIQQkZmkrRnnk4xKgMC3ESWp69ilLpDm6Zu8wQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- intl-tel-input -->
+    <script src="{{ base_url() }}/public/js/vendors/intl-tel-input.min.js"></script>
 
 {% endblock %}

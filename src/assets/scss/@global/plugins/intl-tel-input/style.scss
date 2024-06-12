@@ -118,18 +118,20 @@
 .iti--allow-dropdown input[type=tel], .iti--separate-dial-code input,
 .iti--separate-dial-code input[type=text],
 .iti--separate-dial-code input[type=tel] {
-  padding-right: 6px;
-  padding-left: 52px;
+  padding-right: 6px !important;
+  padding-left: 52px !important;
   margin-left: 0;
+  border: 1px solid #d2d6da !important;
 }
 [dir=rtl] .iti--allow-dropdown input,
 [dir=rtl] .iti--allow-dropdown input[type=text],
 [dir=rtl] .iti--allow-dropdown input[type=tel], [dir=rtl] .iti--separate-dial-code input,
 [dir=rtl] .iti--separate-dial-code input[type=text],
 [dir=rtl] .iti--separate-dial-code input[type=tel] {
-  padding-right: 52px;
-  padding-left: 6px;
+  padding-right: 6px !important;
+  padding-left: 52px !important;
   margin-right: 0;
+  border: 1px solid #d2d6da !important;
 }
 .iti--allow-dropdown .iti__flag-container, .iti--separate-dial-code .iti__flag-container {
   right: auto;

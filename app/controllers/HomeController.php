@@ -23,6 +23,8 @@ class HomeController extends BaseController {
 
         return $this->view->render($response, '/home/index.twig', [
 
+            'pageTitle' => "Element3",
+
             'setup'     => $this->appSetup,
             'locales'   => $this->locales,
 

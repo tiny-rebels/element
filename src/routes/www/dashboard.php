@@ -49,3 +49,15 @@ $app->group('/dashboard', function () use($app) {
     ->add(new CsrfViewMiddleware($view, $guard))
     ->add($guard)
 ;
+
+/**
+ * Group that DOESN'T require the user to be signed in nor a guest!
+ */
+$app->group('', function () {
+
+    /**
+     * action : CRON JOB -> BACKUP -> DATABASE
+     */
+    $this->get('/backup/database', ['app\controllers\DashboardController', 'backupDatabase'])->setName('backup.database');
+
+});
