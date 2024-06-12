@@ -1,6 +1,5 @@
 {
     "name": "element/nexus",
-    "version": "3.0",
     "description": "Element3 is a super ''easy-to-work-with'' php framework, that are built on top of Slim3. It's very similar to Laravel",
     "keywords": ["Tiny-Rebels", "element", "framework", "slim3", "MVC", "PHP-7", "Vue3", "Webpack", "SCSS", "Bootstrap5", "Twig", "JS", "NPM", "Composer"],
     "type": "project",
